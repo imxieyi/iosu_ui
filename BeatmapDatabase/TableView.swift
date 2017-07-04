@@ -21,6 +21,7 @@ class TableView:UITableView, UITableViewDelegate, UITableViewDataSource {
         //fatalError("init(coder:) has not been implemented")
         self.dataSource = self
         self.delegate = self
+        self.backgroundColor = .clear
         do {
             db = try DBConnection()
             set = try db?.allBeatmaps()
@@ -43,6 +44,30 @@ class TableView:UITableView, UITableViewDelegate, UITableViewDataSource {
             let model = MasterCellModel(thumb: thumb, bm: bm!)
             cell?.updateData(obj: model)
             cells.append(cell!)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        debugPrint(indexPath.row)
+        let sview = superview as! BeatmapList
+        let bm = set?.getMasterMeta(at: indexPath.row)
+        if bm?.bgimg != nil {
+            if bm?.bgimg != "" {
+                var path = LiteBeatmap.docURL
+                path.appendPathComponent((bm?.dir)!)
+                path.appendPathComponent((bm?.bgimg)!)
+                do {
+                    let data = try Data(contentsOf: path)
+                    let img = UIImage(data: data)
+                    sview.updateimg(image: img)
+                } catch {
+                    sview.updateimg(image: nil)
+                }
+            } else {
+                sview.updateimg(image: nil)
+            }
+        } else {
+            sview.updateimg(image: nil)
         }
     }
     

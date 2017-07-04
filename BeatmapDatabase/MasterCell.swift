@@ -16,6 +16,14 @@ class MasterCell:UITableViewCell {
     @IBOutlet var thumbImg: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     
+    static let bgcolor = UIColor(colorLiteralRed: 0, green: 0.441, blue: 0.660, alpha: BeatmapList.globalAlpha)
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.selectionStyle = .none
+        self.backgroundColor = MasterCell.bgcolor
+    }
+    
     func updateData(obj:MasterCellModel) {
         if obj.thumb != nil {
             if obj.thumb?.image != nil {

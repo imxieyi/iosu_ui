@@ -18,6 +18,8 @@
 		8A883EE51F0BC63100153470 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A883EE11F0BC63100153470 /* SQLite.framework */; };
 		8A883EE61F0BC63100153470 /* UIImageColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A883EE21F0BC63100153470 /* UIImageColors.framework */; };
 		8A883EE81F0BC96F00153470 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A883EE71F0BC96F00153470 /* Thumbnail.swift */; };
+		8A883EEA1F0BE13300153470 /* BeatmapList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A883EE91F0BE13300153470 /* BeatmapList.swift */; };
+		8A883EEC1F0BE1F000153470 /* UIColor_Hex_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A883EEB1F0BE1F000153470 /* UIColor_Hex_Swift.framework */; };
 		8A889D971F0A6D9200834303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A889D961F0A6D9200834303 /* AppDelegate.swift */; };
 		8A889D991F0A6D9200834303 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A889D981F0A6D9200834303 /* ViewController.swift */; };
 		8A889D9C1F0A6D9200834303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A889D9A1F0A6D9200834303 /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 		8A883EE11F0BC63100153470 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../Library/Developer/Xcode/DerivedData/BeatmapDatabase-cflizjmvcjlapnaqiyzzyolzdmep/Build/Products/Debug-iphonesimulator/SQLite.swift/SQLite.framework"; sourceTree = "<group>"; };
 		8A883EE21F0BC63100153470 /* UIImageColors.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIImageColors.framework; path = "../../Library/Developer/Xcode/DerivedData/BeatmapDatabase-cflizjmvcjlapnaqiyzzyolzdmep/Build/Products/Debug-iphonesimulator/UIImageColors/UIImageColors.framework"; sourceTree = "<group>"; };
 		8A883EE71F0BC96F00153470 /* Thumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
+		8A883EE91F0BE13300153470 /* BeatmapList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeatmapList.swift; sourceTree = "<group>"; };
+		8A883EEB1F0BE1F000153470 /* UIColor_Hex_Swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIColor_Hex_Swift.framework; path = "../../Library/Developer/Xcode/DerivedData/BeatmapDatabase-cflizjmvcjlapnaqiyzzyolzdmep/Build/Products/Debug-iphonesimulator/UIColor_Hex_Swift/UIColor_Hex_Swift.framework"; sourceTree = "<group>"; };
 		8A889D931F0A6D9200834303 /* BeatmapDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeatmapDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A889D961F0A6D9200834303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A889D981F0A6D9200834303 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -73,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A883EEC1F0BE1F000153470 /* UIColor_Hex_Swift.framework in Frameworks */,
 				8A883EE31F0BC63100153470 /* Async.framework in Frameworks */,
 				8A883EE41F0BC63100153470 /* BCColor.framework in Frameworks */,
 				8A883EE51F0BC63100153470 /* SQLite.framework in Frameworks */,
@@ -120,6 +125,7 @@
 				8A883ED91F0BB1ED00153470 /* MasterCell.xib */,
 				8A883EDB1F0BB2DD00153470 /* MasterCell.swift */,
 				8A883EDD1F0BB51000153470 /* TableView.swift */,
+				8A883EE91F0BE13300153470 /* BeatmapList.swift */,
 			);
 			path = BeatmapDatabase;
 			sourceTree = "<group>";
@@ -136,6 +142,7 @@
 		ACDC98057E5A76456D36228A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A883EEB1F0BE1F000153470 /* UIColor_Hex_Swift.framework */,
 				8A883EDF1F0BC63100153470 /* Async.framework */,
 				8A883EE01F0BC63100153470 /* BCColor.framework */,
 				8A883EE11F0BC63100153470 /* SQLite.framework */,
@@ -272,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A883EEA1F0BE13300153470 /* BeatmapList.swift in Sources */,
 				8AA1AD181F0A98AA0083CA11 /* DatabaseAccess.swift in Sources */,
 				8A889DAB1F0A6D9E00834303 /* LiteBeatmap.swift in Sources */,
 				8A889D991F0A6D9200834303 /* ViewController.swift in Sources */,

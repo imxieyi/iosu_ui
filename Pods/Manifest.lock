@@ -4,20 +4,23 @@ PODS:
   - SQLite.swift (0.11.3):
     - SQLite.swift/standard (= 0.11.3)
   - SQLite.swift/standard (0.11.3)
+  - UIColor_Hex_Swift (3.0.2)
   - UIImageColors (1.3.1)
 
 DEPENDENCIES:
   - AsyncSwift
   - BCColor
   - SQLite.swift (~> 0.11.3)
+  - UIColor_Hex_Swift (~> 3.0.2)
   - UIImageColors
 
 SPEC CHECKSUMS:
   AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
   BCColor: 2425540cb0da92795b81a1f15b5289a92279c9eb
   SQLite.swift: 99b36c22084427f0abbeb957556ce1528cf10bb3
+  UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
   UIImageColors: ba833ce88773453e0a1065f29cde333a97865607
 
-PODFILE CHECKSUM: 4e23d1848cfe9a5823224205396124e4d561b5f5
+PODFILE CHECKSUM: 72a2ae053e41fc9ccd580eb4c471df40e8924a1e
 
 COCOAPODS: 1.2.1

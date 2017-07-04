@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VzS-L3-DsN" customClass="MasterCell" customModule="BeatmapDatabase" customModuleProvider="target">
+        <tableViewCell opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VzS-L3-DsN" customClass="MasterCell" customModule="BeatmapDatabase" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="560" height="64"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VzS-L3-DsN" id="wIL-6t-eIf">
-                <rect key="frame" x="0.0" y="0.0" width="560" height="63.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="560" height="64"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sFW-fd-SXT">

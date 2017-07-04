@@ -246,7 +246,7 @@ open class DBConnection {
         }
         let query = thumbnails?.filter(self.id == Int64(id))
         for t in try (db?.prepare(query!))! {
-            thumb.bg = UIColor(colorLiteralRed: Float(t[bgr]!), green: Float(t[bgg]!), blue: Float(t[bgb]!), alpha: 1)
+            thumb.bg = UIColor(colorLiteralRed: Float(t[bgr]!), green: Float(t[bgg]!), blue: Float(t[bgb]!), alpha: BeatmapList.globalAlpha)
             thumb.fg = UIColor(colorLiteralRed: Float(t[fgr]!), green: Float(t[fgg]!), blue: Float(t[fgb]!), alpha: 1)
         }
         return thumb
