@@ -1,0 +1,17 @@
+PODS:
+  - AsyncSwift (2.0.1)
+  - SQLite.swift (0.11.3):
+    - SQLite.swift/standard (= 0.11.3)
+  - SQLite.swift/standard (0.11.3)
+
+DEPENDENCIES:
+  - AsyncSwift
+  - SQLite.swift (~> 0.11.3)
+
+SPEC CHECKSUMS:
+  AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
+  SQLite.swift: 99b36c22084427f0abbeb957556ce1528cf10bb3
+
+PODFILE CHECKSUM: 6066081361ea342227ebc35c4c2a7affa91ea5ed
+
+COCOAPODS: 1.2.1

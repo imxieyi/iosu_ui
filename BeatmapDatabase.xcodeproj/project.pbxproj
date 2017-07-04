@@ -7,14 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		388768B76F9054423829D6B2 /* Pods_BeatmapDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B514AEB91F17985E2D640A /* Pods_BeatmapDatabase.framework */; };
+		8A537D431F0B3B89008EEDF8 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A537D421F0B3B89008EEDF8 /* UIImageExt.swift */; };
 		8A889D971F0A6D9200834303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A889D961F0A6D9200834303 /* AppDelegate.swift */; };
 		8A889D991F0A6D9200834303 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A889D981F0A6D9200834303 /* ViewController.swift */; };
 		8A889D9C1F0A6D9200834303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A889D9A1F0A6D9200834303 /* Main.storyboard */; };
 		8A889D9E1F0A6D9200834303 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A889D9D1F0A6D9200834303 /* Assets.xcassets */; };
 		8A889DA11F0A6D9200834303 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A889D9F1F0A6D9200834303 /* LaunchScreen.storyboard */; };
+		8A889DAA1F0A6D9E00834303 /* BeatmapScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A889DA81F0A6D9E00834303 /* BeatmapScanner.swift */; };
+		8A889DAB1F0A6D9E00834303 /* LiteBeatmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A889DA91F0A6D9E00834303 /* LiteBeatmap.swift */; };
+		8A889DB21F0A8A0B00834303 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A889DB11F0A8A0B00834303 /* SQLite.framework */; };
+		8A889DB31F0A8A0B00834303 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A889DB11F0A8A0B00834303 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8AA1AD151F0A90080083CA11 /* Async.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA1AD141F0A90080083CA11 /* Async.framework */; };
+		8AA1AD161F0A90080083CA11 /* Async.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA1AD141F0A90080083CA11 /* Async.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8AA1AD181F0A98AA0083CA11 /* DatabaseAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA1AD171F0A98AA0083CA11 /* DatabaseAccess.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8A889DB41F0A8A0B00834303 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8A889DB31F0A8A0B00834303 /* SQLite.framework in Embed Frameworks */,
+				8AA1AD161F0A90080083CA11 /* Async.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		394F4C14372F540026092DB8 /* Pods-BeatmapDatabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeatmapDatabase.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeatmapDatabase/Pods-BeatmapDatabase.release.xcconfig"; sourceTree = "<group>"; };
+		53C6876BA8FBA18DFCC299EA /* Pods-BeatmapDatabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeatmapDatabase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeatmapDatabase/Pods-BeatmapDatabase.debug.xcconfig"; sourceTree = "<group>"; };
+		8A537D421F0B3B89008EEDF8 /* UIImageExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		8A889D931F0A6D9200834303 /* BeatmapDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeatmapDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A889D961F0A6D9200834303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A889D981F0A6D9200834303 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +49,13 @@
 		8A889D9D1F0A6D9200834303 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A889DA01F0A6D9200834303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A889DA21F0A6D9200834303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A889DA81F0A6D9E00834303 /* BeatmapScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeatmapScanner.swift; sourceTree = "<group>"; };
+		8A889DA91F0A6D9E00834303 /* LiteBeatmap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiteBeatmap.swift; sourceTree = "<group>"; };
+		8A889DAC1F0A6E1700834303 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../Library/Developer/Xcode/DerivedData/BeatmapDatabase-cflizjmvcjlapnaqiyzzyolzdmep/Build/Products/Debug-iphoneos/SQLite.swift/SQLite.framework"; sourceTree = "<group>"; };
+		8A889DB11F0A8A0B00834303 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AA1AD141F0A90080083CA11 /* Async.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Async.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AA1AD171F0A98AA0083CA11 /* DatabaseAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseAccess.swift; sourceTree = "<group>"; };
+		E1B514AEB91F17985E2D640A /* Pods_BeatmapDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeatmapDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +63,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A889DB21F0A8A0B00834303 /* SQLite.framework in Frameworks */,
+				388768B76F9054423829D6B2 /* Pods_BeatmapDatabase.framework in Frameworks */,
+				8AA1AD151F0A90080083CA11 /* Async.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +75,12 @@
 		8A889D8A1F0A6D9200834303 = {
 			isa = PBXGroup;
 			children = (
+				8AA1AD141F0A90080083CA11 /* Async.framework */,
+				8A889DB11F0A8A0B00834303 /* SQLite.framework */,
 				8A889D951F0A6D9200834303 /* BeatmapDatabase */,
 				8A889D941F0A6D9200834303 /* Products */,
+				93E1F1F2C614B614271976C1 /* Pods */,
+				ACDC98057E5A76456D36228A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +95,36 @@
 		8A889D951F0A6D9200834303 /* BeatmapDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				8A889DA81F0A6D9E00834303 /* BeatmapScanner.swift */,
+				8A889DA91F0A6D9E00834303 /* LiteBeatmap.swift */,
 				8A889D961F0A6D9200834303 /* AppDelegate.swift */,
 				8A889D981F0A6D9200834303 /* ViewController.swift */,
 				8A889D9A1F0A6D9200834303 /* Main.storyboard */,
 				8A889D9D1F0A6D9200834303 /* Assets.xcassets */,
 				8A889D9F1F0A6D9200834303 /* LaunchScreen.storyboard */,
 				8A889DA21F0A6D9200834303 /* Info.plist */,
+				8AA1AD171F0A98AA0083CA11 /* DatabaseAccess.swift */,
+				8A537D421F0B3B89008EEDF8 /* UIImageExt.swift */,
 			);
 			path = BeatmapDatabase;
+			sourceTree = "<group>";
+		};
+		93E1F1F2C614B614271976C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53C6876BA8FBA18DFCC299EA /* Pods-BeatmapDatabase.debug.xcconfig */,
+				394F4C14372F540026092DB8 /* Pods-BeatmapDatabase.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ACDC98057E5A76456D36228A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A889DAC1F0A6E1700834303 /* SQLite.framework */,
+				E1B514AEB91F17985E2D640A /* Pods_BeatmapDatabase.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +134,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A889DA51F0A6D9200834303 /* Build configuration list for PBXNativeTarget "BeatmapDatabase" */;
 			buildPhases = (
+				4E27C4BDC2FC15B1A8DEC9F6 /* [CP] Check Pods Manifest.lock */,
 				8A889D8F1F0A6D9200834303 /* Sources */,
 				8A889D901F0A6D9200834303 /* Frameworks */,
 				8A889D911F0A6D9200834303 /* Resources */,
+				9FAFEDB8D77B1720C536E655 /* [CP] Embed Pods Frameworks */,
+				84D1777F0D3D8C38C9A8C9D5 /* [CP] Copy Pods Resources */,
+				8A889DB41F0A8A0B00834303 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,13 +199,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4E27C4BDC2FC15B1A8DEC9F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		84D1777F0D3D8C38C9A8C9D5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeatmapDatabase/Pods-BeatmapDatabase-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FAFEDB8D77B1720C536E655 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeatmapDatabase/Pods-BeatmapDatabase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8A889D8F1F0A6D9200834303 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA1AD181F0A98AA0083CA11 /* DatabaseAccess.swift in Sources */,
+				8A889DAB1F0A6D9E00834303 /* LiteBeatmap.swift in Sources */,
 				8A889D991F0A6D9200834303 /* ViewController.swift in Sources */,
 				8A889D971F0A6D9200834303 /* AppDelegate.swift in Sources */,
+				8A889DAA1F0A6D9E00834303 /* BeatmapScanner.swift in Sources */,
+				8A537D431F0B3B89008EEDF8 /* UIImageExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +380,7 @@
 		};
 		8A889DA61F0A6D9200834303 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53C6876BA8FBA18DFCC299EA /* Pods-BeatmapDatabase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 34A2STWT5M;
@@ -274,6 +394,7 @@
 		};
 		8A889DA71F0A6D9200834303 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 394F4C14372F540026092DB8 /* Pods-BeatmapDatabase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 34A2STWT5M;
@@ -304,6 +425,7 @@
 				8A889DA71F0A6D9200834303 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
