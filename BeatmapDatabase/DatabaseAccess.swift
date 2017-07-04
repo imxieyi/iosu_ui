@@ -54,7 +54,9 @@ open class DBConnection {
         db = try Connection(DBConnection.liburl.appendingPathComponent("iosu.db").path)
         beatmap = Table("beatmap")
         thumbnails = Table("thumbnails")
-        //try db.run(beatmap.drop(ifExists: true))
+        //try db?.run((beatmap?.drop(ifExists: true))!)
+        //try db?.run((thumbnails?.drop(ifExists: true))!)
+        //try FileManager.default.removeItem(at: DBConnection.liburl.appendingPathComponent("Caches").appendingPathComponent("Thumbnails"))
         
         let builder = beatmap?.create(ifNotExists: true) { t in
             t.column(id, primaryKey: .autoincrement)

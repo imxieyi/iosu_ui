@@ -14,15 +14,9 @@ class ViewController: UIViewController {
     
     @IBOutlet var loadLabel: UILabel!
     @IBOutlet var loadProgress: UIProgressView!
-    @IBOutlet var loadLog: UITextView!
+    @IBOutlet var progLabel: UILabel!
     
     private var count = 0
-    
-    func addlog(str:String) {
-        var text = "\(str)\n"
-        text.append(self.loadLog.text)
-        self.loadLog.text = text
-    }
     
     func work() throws {
         let db = try DBConnection()
@@ -47,11 +41,10 @@ class ViewController: UIViewController {
                 do {
                     count += 1
                     let progress = Float(count) / Float(total)
-                    let sync = Async.main {
+                    Async.main {
                         self.loadProgress.progress = progress
-                        self.addlog(str: entry.osufile)
+                        self.progLabel.text = entry.osufile
                     }
-                    sync.wait()
                     let attributes = try LiteBeatmap.manager.attributesOfItem(atPath: LiteBeatmap.docURL.appendingPathComponent(entry.dir).appendingPathComponent(entry.osufile).path)
                     let filesize = (attributes[.size])! as! Int64
                     let oldbm = try! db.queryBeatmap(osufile: entry.osufile)
@@ -84,16 +77,14 @@ class ViewController: UIViewController {
         }
         self.count = try db.countBeatmap()
         Async.main {
-            self.addlog(str: "Updating thumbnail cache...")
+            self.progLabel.text = "Updating thumbnail cache..."
         }
         try db.updateThumbCache()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         debugPrint(LiteBeatmap.docURL)
-        self.loadLog.layoutManager.allowsNonContiguousLayout = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -106,7 +97,7 @@ class ViewController: UIViewController {
             }
             print("finished")
             Async.main {
-                self.loadLabel.text = "   Load finished: \(self.count)"
+                self.progLabel.text = "Load finished: \(self.count)"
             }
         }
     }
