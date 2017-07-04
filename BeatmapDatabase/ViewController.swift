@@ -97,7 +97,10 @@ class ViewController: UIViewController {
             }
             print("finished")
             Async.main {
-                self.progLabel.text = "Load finished: \(self.count)"
+                self.progLabel.text = "Loading beatmap list..."
+            }.wait()
+            Async.main {
+                self.performSegue(withIdentifier: "showmain", sender: self)
             }
         }
     }

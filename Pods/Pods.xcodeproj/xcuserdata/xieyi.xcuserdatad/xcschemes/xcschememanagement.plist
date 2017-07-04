@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BCColor.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-BeatmapDatabase.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,20 +24,35 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UIImageColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3B7B0C4232C526BA646D02989122E992</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>44921C333CDD509B300638C3A30579EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7F45F2F21482C3777494ACE42307212D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C4DEEAB104AE35964E6C61B16B18C955</key>
+		<key>D3CE623D72D4DBD5835BD7430485B1F5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CA8530BBCA0FD9118B999A93E1EA2A0B</key>
+		<key>EAAEB5407C4FB7C579F716F42F814653</key>
 		<dict>
 			<key>primary</key>
 			<true/>

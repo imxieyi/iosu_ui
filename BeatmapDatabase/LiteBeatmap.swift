@@ -446,7 +446,7 @@ open class LiteBeatmap{
     
     //Reference: http://www.jianshu.com/p/4fdb61354fe0
     private static let size = CGSize(width: 128, height: 128)
-    open func genThumbnail(id: Int) throws {
+    open func genThumbnail(id: Int) throws -> Thumbnail {
         if bgimg == nil {
             throw BeatmapError.noBgimg
         }
@@ -471,6 +471,7 @@ open class LiteBeatmap{
         path.appendPathComponent("Thumbnails")
         path.appendPathComponent("\(id).png")
         try data?.write(to: path)
+        return Thumbnail(image: thumb)
     }
     
 }

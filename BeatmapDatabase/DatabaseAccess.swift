@@ -45,18 +45,29 @@ open class DBConnection {
     
     //Thumbnails
     private let imgfile = Expression<String>("imgfile")
+    private let bgr = Expression<Double?>("bgr")
+    private let bgg = Expression<Double?>("bgg")
+    private let bgb = Expression<Double?>("bgb")
+    private let fgr = Expression<Double?>("fgr")
+    private let fgg = Expression<Double?>("fgg")
+    private let fgb = Expression<Double?>("fgb")
     
     open static let manager = FileManager.default
     open static let liburl = manager.urls(for: .libraryDirectory, in: .userDomainMask)[0]
+    
+    private static var firstrun = true
     
     init() throws {
         debugPrint(DBConnection.liburl)
         db = try Connection(DBConnection.liburl.appendingPathComponent("iosu.db").path)
         beatmap = Table("beatmap")
         thumbnails = Table("thumbnails")
-        //try db?.run((beatmap?.drop(ifExists: true))!)
-        //try db?.run((thumbnails?.drop(ifExists: true))!)
-        //try FileManager.default.removeItem(at: DBConnection.liburl.appendingPathComponent("Caches").appendingPathComponent("Thumbnails"))
+        if DBConnection.firstrun {
+            DBConnection.firstrun = false
+            //try db?.run((beatmap?.drop(ifExists: true))!)
+            //try db?.run((thumbnails?.drop(ifExists: true))!)
+            //try FileManager.default.removeItem(at: DBConnection.liburl.appendingPathComponent("Caches").appendingPathComponent("Thumbnails"))
+        }
         
         let builder = beatmap?.create(ifNotExists: true) { t in
             t.column(id, primaryKey: .autoincrement)
@@ -91,6 +102,12 @@ open class DBConnection {
             t.column(id, primaryKey: .autoincrement)
             t.column(dir)
             t.column(imgfile)
+            t.column(bgr)
+            t.column(bgg)
+            t.column(bgb)
+            t.column(fgr)
+            t.column(fgg)
+            t.column(fgb)
         }
         try db?.run(builder2!)
     }
@@ -144,6 +161,41 @@ open class DBConnection {
         return nil
     }
     
+    open func allBeatmaps() throws -> BeatmapSet {
+        let query = beatmap?.order(dir)
+        let set = BeatmapSet()
+        for b in try (db?.prepare(query!))! {
+            let bm = LiteBeatmap()
+            bm.id = b[id]
+            bm.dir = b[dir]
+            bm.osufile = b[self.osufile]
+            bm.filesize = b[filesize]
+            bm.audio = b[audio]
+            bm.audioprv = b[audioprv]
+            bm.bgimg = b[bgimg]
+            bm.artist = b[artist]
+            bm.title = b[title]
+            bm.creator = b[creator]
+            bm.version = b[version]
+            bm.hp = b[hp]
+            bm.cs = b[cs]
+            bm.od = b[od]
+            bm.ar = b[ar]
+            bm.minbpm = b[minbpm]
+            bm.maxbpm = b[maxbpm]
+            bm.length = b[length]
+            bm.video = b[video]
+            bm.circle = b[circle]
+            bm.slider = b[slider]
+            bm.spinner = b[spinner]
+            bm.hassb = b[hassb]
+            bm.osbfile = b[osbfile]
+            bm.objects = b[objects]
+            set.add(bm: bm)
+        }
+        return set
+    }
+    
     open func beatmapExists(dir:String, osufile:String) -> Bool {
         var url = LiteBeatmap.docURL
         url.appendPathComponent(dir)
@@ -187,6 +239,19 @@ open class DBConnection {
         return -1
     }
     
+    open func queryThumb(id: Int) throws -> Thumbnail {
+        let thumb = Thumbnail()
+        if id < 0 {
+            return thumb
+        }
+        let query = thumbnails?.filter(self.id == Int64(id))
+        for t in try (db?.prepare(query!))! {
+            thumb.bg = UIColor(colorLiteralRed: Float(t[bgr]!), green: Float(t[bgg]!), blue: Float(t[bgb]!), alpha: 1)
+            thumb.fg = UIColor(colorLiteralRed: Float(t[fgr]!), green: Float(t[fgg]!), blue: Float(t[fgb]!), alpha: 1)
+        }
+        return thumb
+    }
+    
     open func insertThumbnail(bm:LiteBeatmap) throws {
         if bm.bgimg == nil {
             return
@@ -203,7 +268,23 @@ open class DBConnection {
         let insert = thumbnails?.insert(dir <- bm.dir, imgfile <- bm.bgimg!)
         try db?.run(insert!)
         let id = try queryThumb(bm: bm)
-        try bm.genThumbnail(id: id)
+        do {
+            let t = try bm.genThumbnail(id: id)
+            let update = thumbnails?.filter(self.id == Int64(id))
+            var br:CGFloat = 0
+            var bg:CGFloat = 0
+            var bb:CGFloat = 0
+            var ba:CGFloat = 0
+            var fr:CGFloat = 0
+            var fg:CGFloat = 0
+            var fb:CGFloat = 0
+            var fa:CGFloat = 0
+            t.bg?.getRed(&br, green: &bg, blue: &bb, alpha: &ba)
+            t.fg?.getRed(&fr, green: &fg, blue: &fb, alpha: &fa)
+            try db?.run((update?.update(bgr <- Double(br), bgg <- Double(bg), bgb <- Double(bb), fgr <- Double(fr), fgg <- Double(fg), fgb <- Double(fb)))!)
+        } catch {
+            try delThumbnail(bm: bm)
+        }
     }
     
     open func delThumbnail(bm: LiteBeatmap) throws {
@@ -223,20 +304,24 @@ open class DBConnection {
         }
     }
     
-    open func getThumbnail(bm: LiteBeatmap) -> UIImage? {
+    open func getThumbnail(bm: LiteBeatmap) -> Thumbnail {
         do {
             let id = try queryThumb(bm: bm)
             if id == -1 {
-                return nil
+                let thumb = Thumbnail()
+                return thumb
             }
             var path = DBConnection.liburl
             path.appendPathComponent("Caches")
             path.appendPathComponent("Thumbnails")
             path.appendPathComponent("\(id).png")
+            let thumb = try queryThumb(id: id)
             let raw = try Data(contentsOf: path)
-            return UIImage(data: raw)
+            thumb.image = UIImage(data: raw)
+            return thumb
         } catch {
-            return nil
+            let thumb = Thumbnail()
+            return thumb
         }
     }
     
@@ -250,7 +335,7 @@ open class DBConnection {
                 let bm = LiteBeatmap()
                 bm.dir = t[dir]
                 bm.bgimg = t[imgfile]
-                try? bm.genThumbnail(id: Int(t[id]))
+                _ = try? bm.genThumbnail(id: Int(t[id]))
             }
         }
     }
