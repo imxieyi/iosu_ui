@@ -463,7 +463,7 @@ open class LiteBeatmap{
         } else {
             let width = (img?.size.height)! * LiteBeatmap.size.width / LiteBeatmap.size.height
             let height = (img?.size.height)!
-            thumb = (img?.crop(rect: CGRect(x: 0, y: ((img?.size.height)! - height)/2, width: width, height: height)).scale(size: LiteBeatmap.size))!
+            thumb = (img?.crop(rect: CGRect(x: ((img?.size.width)! - width)/2, y: 0, width: width, height: height)).scale(size: LiteBeatmap.size))!
         }
         let data = UIImagePNGRepresentation(thumb)
         var path = DBConnection.liburl
