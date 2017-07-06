@@ -17,8 +17,6 @@
 		8A70F70D1F0E5C9400D2226D /* LiteSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F70A1F0E5C9400D2226D /* LiteSlider.swift */; };
 		8A70F70F1F0E5CD000D2226D /* HitObjectEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F70E1F0E5CD000D2226D /* HitObjectEnums.swift */; };
 		8A70F7131F0E5F9B00D2226D /* TpHitObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F7121F0E5F9B00D2226D /* TpHitObject.swift */; };
-		8A70F9931F0E656900D2226D /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F98F1F0E656900D2226D /* LICENSE.md */; };
-		8A70F9941F0E656900D2226D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F9901F0E656900D2226D /* README.md */; };
 		8A70F9951F0E656900D2226D /* UIBezierPath+Length.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F9921F0E656900D2226D /* UIBezierPath+Length.m */; };
 		8A70F9981F0E6C0600D2226D /* AiModtpDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F9971F0E6C0600D2226D /* AiModtpDifficulty.swift */; };
 		8A883ED81F0BADDE00153470 /* BeatmapSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A883ED71F0BADDE00153470 /* BeatmapSet.swift */; };
@@ -330,7 +328,6 @@
 			files = (
 				8A883EEA1F0BE13300153470 /* BeatmapList.swift in Sources */,
 				8A70F70C1F0E5C9400D2226D /* LiteHitObject.swift in Sources */,
-				8A70F9941F0E656900D2226D /* README.md in Sources */,
 				8A70F7041F0E2ADA00D2226D /* SlaveCell.swift in Sources */,
 				8AA1AD181F0A98AA0083CA11 /* DatabaseAccess.swift in Sources */,
 				8A70F7131F0E5F9B00D2226D /* TpHitObject.swift in Sources */,
@@ -344,7 +341,6 @@
 				8A883EDE1F0BB51000153470 /* TableView.swift in Sources */,
 				8A70F70D1F0E5C9400D2226D /* LiteSlider.swift in Sources */,
 				8A889DAA1F0A6D9E00834303 /* BeatmapScanner.swift in Sources */,
-				8A70F9931F0E656900D2226D /* LICENSE.md in Sources */,
 				8A70F9951F0E656900D2226D /* UIBezierPath+Length.m in Sources */,
 				8A883EDC1F0BB2DD00153470 /* MasterCell.swift in Sources */,
 				8A537D431F0B3B89008EEDF8 /* UIImageExt.swift in Sources */,
@@ -476,10 +472,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 34A2STWT5M;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/iosu/Pods/MobileVLCKit/MobileVLCKit-binary",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BeatmapDatabase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xieyi.BeatmapDatabase;
@@ -495,10 +488,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 34A2STWT5M;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/iosu/Pods/MobileVLCKit/MobileVLCKit-binary",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BeatmapDatabase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xieyi.BeatmapDatabase;
