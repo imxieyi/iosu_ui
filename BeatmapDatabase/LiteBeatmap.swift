@@ -41,30 +41,6 @@ open class LiteTimingPoint {
     
 }
 
-enum HitObjectType {
-    case circle
-    case slider
-    case spinner
-    case none //Unknown hitobject type
-}
-
-class HitObject{
-    
-    static func getObjectType(_ num:Int) -> HitObjectType {
-        if num==1 || num==5 {
-            return HitObjectType.circle
-        }
-        if num==2 || num==6 {
-            return HitObjectType.slider
-        }
-        if num==8 || num==12 {
-            return HitObjectType.spinner
-        }
-        return HitObjectType.none
-    }
-    
-}
-
 open class LiteBeatmap{
     
     open var id:Int64 = -1
@@ -82,6 +58,8 @@ open class LiteBeatmap{
     open var cs:Double = 0
     open var od:Double = 0
     open var ar:Double = 0
+    private var sm:Double = 0
+    open var stars:Double = 0
     open var minbpm:Double = 100000
     open var maxbpm:Double = -100000
     open var length:Double = 0
@@ -100,6 +78,7 @@ open class LiteBeatmap{
     static var osbobj:Int64 = 0
     static var lastaudio = ""
     static var lastlen:Double = 0
+    open var hitobjects:[LiteHitObject] = []
     
     static let manager = FileManager.default
     
@@ -112,6 +91,9 @@ open class LiteBeatmap{
         let osupath = LiteBeatmap.docURL.appendingPathComponent(dir).appendingPathComponent(osufile)
         var lines = try readfile(path: osupath.path)
         try scanbeatmap(lines: lines)
+        let aimod = AiModtpDifficulty(bm: self)
+        stars = aimod.starRating
+        debugPrint("\(osufile) \(stars)")
         calcbpm()
         let audiopath = (dir as NSString).appending(audio)
         if LiteBeatmap.lastaudio != audiopath {
@@ -301,6 +283,9 @@ open class LiteBeatmap{
             case "ApproachRate":
                 ar=value
                 break
+            case "SliderMultiplier":
+                sm=value
+                break
             default:
                 break
             }
@@ -403,20 +388,77 @@ open class LiteBeatmap{
                 continue
             }
             let typenum = (splitted[3] as NSString).integerValue % 16
-            switch HitObject.getObjectType(typenum) {
+            switch LiteHitObject.getObjectType(typenum) {
             case .circle:
                 circle += 1
+                hitobjects.append(LiteHitCircle(x: (splitted[0] as NSString).integerValue, y: (splitted[1] as NSString).integerValue, time: (splitted[2] as NSString).integerValue))
                 break
             case .slider:
                 slider += 1
+                let dslider=decodeSlider(splitted[5])
+                let cslider=LiteSlider(x: (splitted[0] as NSString).integerValue, y: (splitted[1] as NSString).integerValue, slidertype: dslider.type, curveX: dslider.cx, curveY: dslider.cy, time: (splitted[2] as NSString).integerValue, repe: (splitted[6] as NSString).integerValue, length:(splitted[7] as NSString).integerValue, tp:getTimingPoint((splitted[2] as NSString).integerValue), sm:sm)
+                cslider.genpath()
+                hitobjects.append(cslider)
                 break
             case .spinner:
                 spinner += 1
+                hitobjects.append(LiteHitObject(type: .spinner, x: 256, y: 192, time: (splitted[2] as NSString).integerValue))
                 break
             case .none:
                 continue
             }
         }
+    }
+    
+    func decodeSlider(_ sliderinfo:String) -> DecodedSlider {
+        let splitted=sliderinfo.components(separatedBy: "|")
+        if splitted.count<=1{
+            return DecodedSlider(cx: [], cy: [], type: .none)
+        }
+        var type=SliderType.none
+        switch splitted[0]{
+        case "L":
+            type = .linear
+            break
+        case "P":
+            type = .passThrough
+            break
+        case "B":
+            type = .bezier
+            break
+        case "C":
+            type = .catmull
+            break
+        default:
+            return DecodedSlider(cx: [], cy: [], type: .none)
+        }
+        var cx:[Int] = []
+        var cy:[Int] = []
+        for i in 1...splitted.count-1 {
+            let position=splitted[i].components(separatedBy: ":")
+            if position.count != 2 {
+                continue
+            }
+            let x=(position[0] as NSString).integerValue
+            let y=(position[1] as NSString).integerValue
+            cx.append(x)
+            cy.append(y)
+        }
+        return DecodedSlider(cx: cx, cy: cy, type: type)
+    }
+    
+    class DecodedSlider {
+        
+        open var cx:[Int]
+        open var cy:[Int]
+        open var type:SliderType
+        
+        init(cx:[Int],cy:[Int],type:SliderType) {
+            self.cx=cx
+            self.cy=cy
+            self.type=type
+        }
+        
     }
     
     func calcbpm() {
@@ -472,6 +514,15 @@ open class LiteBeatmap{
         path.appendPathComponent("\(id).png")
         try data?.write(to: path)
         return Thumbnail(image: thumb)
+    }
+    
+    func getTimingPoint(_ offset:Int) -> LiteTimingPoint {
+        for i in (0...timingpoints.count-1).reversed() {
+            if timingpoints[i].offset <= offset {
+                return timingpoints[i]
+            }
+        }
+        return timingpoints[0]
     }
     
 }

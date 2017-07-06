@@ -11,6 +11,16 @@
 		8A537D431F0B3B89008EEDF8 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A537D421F0B3B89008EEDF8 /* UIImageExt.swift */; };
 		8A70F7021F0E28B000D2226D /* SlaveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A70F7011F0E28B000D2226D /* SlaveCell.xib */; };
 		8A70F7041F0E2ADA00D2226D /* SlaveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F7031F0E2ADA00D2226D /* SlaveCell.swift */; };
+		8A70F7071F0E5B9800D2226D /* VectorMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F7061F0E5B9800D2226D /* VectorMath.swift */; };
+		8A70F70B1F0E5C9400D2226D /* LiteHitCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F7081F0E5C9400D2226D /* LiteHitCircle.swift */; };
+		8A70F70C1F0E5C9400D2226D /* LiteHitObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F7091F0E5C9400D2226D /* LiteHitObject.swift */; };
+		8A70F70D1F0E5C9400D2226D /* LiteSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F70A1F0E5C9400D2226D /* LiteSlider.swift */; };
+		8A70F70F1F0E5CD000D2226D /* HitObjectEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F70E1F0E5CD000D2226D /* HitObjectEnums.swift */; };
+		8A70F7131F0E5F9B00D2226D /* TpHitObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F7121F0E5F9B00D2226D /* TpHitObject.swift */; };
+		8A70F9931F0E656900D2226D /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F98F1F0E656900D2226D /* LICENSE.md */; };
+		8A70F9941F0E656900D2226D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F9901F0E656900D2226D /* README.md */; };
+		8A70F9951F0E656900D2226D /* UIBezierPath+Length.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F9921F0E656900D2226D /* UIBezierPath+Length.m */; };
+		8A70F9981F0E6C0600D2226D /* AiModtpDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F9971F0E6C0600D2226D /* AiModtpDifficulty.swift */; };
 		8A883ED81F0BADDE00153470 /* BeatmapSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A883ED71F0BADDE00153470 /* BeatmapSet.swift */; };
 		8A883EDA1F0BB1ED00153470 /* MasterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A883ED91F0BB1ED00153470 /* MasterCell.xib */; };
 		8A883EDC1F0BB2DD00153470 /* MasterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A883EDB1F0BB2DD00153470 /* MasterCell.swift */; };
@@ -51,6 +61,18 @@
 		8A537D421F0B3B89008EEDF8 /* UIImageExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		8A70F7011F0E28B000D2226D /* SlaveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlaveCell.xib; sourceTree = "<group>"; };
 		8A70F7031F0E2ADA00D2226D /* SlaveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlaveCell.swift; sourceTree = "<group>"; };
+		8A70F7061F0E5B9800D2226D /* VectorMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorMath.swift; sourceTree = "<group>"; };
+		8A70F7081F0E5C9400D2226D /* LiteHitCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiteHitCircle.swift; sourceTree = "<group>"; };
+		8A70F7091F0E5C9400D2226D /* LiteHitObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiteHitObject.swift; sourceTree = "<group>"; };
+		8A70F70A1F0E5C9400D2226D /* LiteSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiteSlider.swift; sourceTree = "<group>"; };
+		8A70F70E1F0E5CD000D2226D /* HitObjectEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitObjectEnums.swift; sourceTree = "<group>"; };
+		8A70F7121F0E5F9B00D2226D /* TpHitObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TpHitObject.swift; sourceTree = "<group>"; };
+		8A70F98F1F0E656900D2226D /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		8A70F9901F0E656900D2226D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8A70F9911F0E656900D2226D /* UIBezierPath+Length.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Length.h"; sourceTree = "<group>"; };
+		8A70F9921F0E656900D2226D /* UIBezierPath+Length.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Length.m"; sourceTree = "<group>"; };
+		8A70F9961F0E657000D2226D /* iosu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iosu-Bridging-Header.h"; sourceTree = "<group>"; };
+		8A70F9971F0E6C0600D2226D /* AiModtpDifficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AiModtpDifficulty.swift; sourceTree = "<group>"; };
 		8A883ED71F0BADDE00153470 /* BeatmapSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeatmapSet.swift; sourceTree = "<group>"; };
 		8A883ED91F0BB1ED00153470 /* MasterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterCell.xib; sourceTree = "<group>"; };
 		8A883EDB1F0BB2DD00153470 /* MasterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterCell.swift; sourceTree = "<group>"; };
@@ -93,6 +115,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A70F98E1F0E656900D2226D /* UIBezierPath-Length */ = {
+			isa = PBXGroup;
+			children = (
+				8A70F98F1F0E656900D2226D /* LICENSE.md */,
+				8A70F9901F0E656900D2226D /* README.md */,
+				8A70F9911F0E656900D2226D /* UIBezierPath+Length.h */,
+				8A70F9921F0E656900D2226D /* UIBezierPath+Length.m */,
+			);
+			path = "UIBezierPath-Length";
+			sourceTree = "<group>";
+		};
 		8A889D8A1F0A6D9200834303 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +147,7 @@
 		8A889D951F0A6D9200834303 /* BeatmapDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				8A70F7061F0E5B9800D2226D /* VectorMath.swift */,
 				8A889DA81F0A6D9E00834303 /* BeatmapScanner.swift */,
 				8A883EE71F0BC96F00153470 /* Thumbnail.swift */,
 				8A889DA91F0A6D9E00834303 /* LiteBeatmap.swift */,
@@ -126,12 +160,20 @@
 				8AA1AD171F0A98AA0083CA11 /* DatabaseAccess.swift */,
 				8A537D421F0B3B89008EEDF8 /* UIImageExt.swift */,
 				8A883ED71F0BADDE00153470 /* BeatmapSet.swift */,
+				8A70F70E1F0E5CD000D2226D /* HitObjectEnums.swift */,
+				8A70F7081F0E5C9400D2226D /* LiteHitCircle.swift */,
+				8A70F7091F0E5C9400D2226D /* LiteHitObject.swift */,
+				8A70F70A1F0E5C9400D2226D /* LiteSlider.swift */,
 				8A883ED91F0BB1ED00153470 /* MasterCell.xib */,
 				8A883EDB1F0BB2DD00153470 /* MasterCell.swift */,
 				8A883EDD1F0BB51000153470 /* TableView.swift */,
 				8A883EE91F0BE13300153470 /* BeatmapList.swift */,
 				8A70F7011F0E28B000D2226D /* SlaveCell.xib */,
 				8A70F7031F0E2ADA00D2226D /* SlaveCell.swift */,
+				8A70F7121F0E5F9B00D2226D /* TpHitObject.swift */,
+				8A70F9961F0E657000D2226D /* iosu-Bridging-Header.h */,
+				8A70F98E1F0E656900D2226D /* UIBezierPath-Length */,
+				8A70F9971F0E6C0600D2226D /* AiModtpDifficulty.swift */,
 			);
 			path = BeatmapDatabase;
 			sourceTree = "<group>";
@@ -287,13 +329,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A883EEA1F0BE13300153470 /* BeatmapList.swift in Sources */,
+				8A70F70C1F0E5C9400D2226D /* LiteHitObject.swift in Sources */,
+				8A70F9941F0E656900D2226D /* README.md in Sources */,
 				8A70F7041F0E2ADA00D2226D /* SlaveCell.swift in Sources */,
 				8AA1AD181F0A98AA0083CA11 /* DatabaseAccess.swift in Sources */,
+				8A70F7131F0E5F9B00D2226D /* TpHitObject.swift in Sources */,
+				8A70F7071F0E5B9800D2226D /* VectorMath.swift in Sources */,
 				8A889DAB1F0A6D9E00834303 /* LiteBeatmap.swift in Sources */,
 				8A889D991F0A6D9200834303 /* ViewController.swift in Sources */,
 				8A889D971F0A6D9200834303 /* AppDelegate.swift in Sources */,
+				8A70F70B1F0E5C9400D2226D /* LiteHitCircle.swift in Sources */,
+				8A70F9981F0E6C0600D2226D /* AiModtpDifficulty.swift in Sources */,
+				8A70F70F1F0E5CD000D2226D /* HitObjectEnums.swift in Sources */,
 				8A883EDE1F0BB51000153470 /* TableView.swift in Sources */,
+				8A70F70D1F0E5C9400D2226D /* LiteSlider.swift in Sources */,
 				8A889DAA1F0A6D9E00834303 /* BeatmapScanner.swift in Sources */,
+				8A70F9931F0E656900D2226D /* LICENSE.md in Sources */,
+				8A70F9951F0E656900D2226D /* UIBezierPath+Length.m in Sources */,
 				8A883EDC1F0BB2DD00153470 /* MasterCell.swift in Sources */,
 				8A537D431F0B3B89008EEDF8 /* UIImageExt.swift in Sources */,
 				8A883EE81F0BC96F00153470 /* Thumbnail.swift in Sources */,
@@ -424,10 +476,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 34A2STWT5M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iosu/Pods/MobileVLCKit/MobileVLCKit-binary",
+				);
 				INFOPLIST_FILE = BeatmapDatabase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xieyi.BeatmapDatabase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeatmapDatabase/iosu-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -438,10 +495,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 34A2STWT5M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iosu/Pods/MobileVLCKit/MobileVLCKit-binary",
+				);
 				INFOPLIST_FILE = BeatmapDatabase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xieyi.BeatmapDatabase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeatmapDatabase/iosu-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

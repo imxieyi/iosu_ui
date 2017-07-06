@@ -31,6 +31,7 @@ open class DBConnection {
     private let cs = Expression<Double>("cs")
     private let od = Expression<Double>("od")
     private let ar = Expression<Double>("ar")
+    private let stars = Expression<Double>("stars")
     private let minbpm = Expression<Double>("minbpm")
     private let maxbpm = Expression<Double>("maxbpm")
     private let length = Expression<Double>("length")
@@ -85,6 +86,7 @@ open class DBConnection {
             t.column(cs)
             t.column(od)
             t.column(ar)
+            t.column(stars)
             t.column(minbpm)
             t.column(maxbpm)
             t.column(length)
@@ -114,10 +116,10 @@ open class DBConnection {
     
     open func insertBeatmap(bm: LiteBeatmap) throws {
         if bm.id != -1 {
-            let insert = beatmap?.insert(id <- bm.id, dir <- bm.dir, osufile <- bm.osufile, filesize <- bm.filesize, audio <- bm.audio, audioprv <- bm.audioprv, bgimg <- bm.bgimg, artist <- bm.artist, title <- bm.title, creator <- bm.creator, version <- bm.version, hp <- bm.hp, cs <- bm.cs, od <- bm.od, ar <- bm.ar, minbpm <- bm.minbpm, maxbpm <- bm.maxbpm, length <- bm.length, video <- bm.video, circle <- bm.circle, slider <- bm.slider, spinner <- bm.spinner, hassb <- bm.hassb, osbfile <- bm.osbfile, objects <- bm.objects)
+            let insert = beatmap?.insert(id <- bm.id, dir <- bm.dir, osufile <- bm.osufile, filesize <- bm.filesize, audio <- bm.audio, audioprv <- bm.audioprv, bgimg <- bm.bgimg, artist <- bm.artist, title <- bm.title, creator <- bm.creator, version <- bm.version, hp <- bm.hp, cs <- bm.cs, od <- bm.od, ar <- bm.ar, stars <- bm.stars, minbpm <- bm.minbpm, maxbpm <- bm.maxbpm, length <- bm.length, video <- bm.video, circle <- bm.circle, slider <- bm.slider, spinner <- bm.spinner, hassb <- bm.hassb, osbfile <- bm.osbfile, objects <- bm.objects)
             try db?.run(insert!)
         } else {
-            let insert = beatmap?.insert(dir <- bm.dir, osufile <- bm.osufile, filesize <- bm.filesize, audio <- bm.audio, audioprv <- bm.audioprv, bgimg <- bm.bgimg, artist <- bm.artist, title <- bm.title, creator <- bm.creator, version <- bm.version, hp <- bm.hp, cs <- bm.cs, od <- bm.od, ar <- bm.ar, minbpm <- bm.minbpm, maxbpm <- bm.maxbpm, length <- bm.length, video <- bm.video, circle <- bm.circle, slider <- bm.slider, spinner <- bm.spinner, hassb <- bm.hassb, osbfile <- bm.osbfile, objects <- bm.objects)
+            let insert = beatmap?.insert(dir <- bm.dir, osufile <- bm.osufile, filesize <- bm.filesize, audio <- bm.audio, audioprv <- bm.audioprv, bgimg <- bm.bgimg, artist <- bm.artist, title <- bm.title, creator <- bm.creator, version <- bm.version, hp <- bm.hp, cs <- bm.cs, od <- bm.od, ar <- bm.ar, stars <- bm.stars, minbpm <- bm.minbpm, maxbpm <- bm.maxbpm, length <- bm.length, video <- bm.video, circle <- bm.circle, slider <- bm.slider, spinner <- bm.spinner, hassb <- bm.hassb, osbfile <- bm.osbfile, objects <- bm.objects)
             try db?.run(insert!)
             let query = beatmap?.select(id).filter(osufile == bm.osufile)
             for b in try (db?.prepare(query!))! {
@@ -146,6 +148,7 @@ open class DBConnection {
             bm.cs = b[cs]
             bm.od = b[od]
             bm.ar = b[ar]
+            bm.stars = b[stars]
             bm.minbpm = b[minbpm]
             bm.maxbpm = b[maxbpm]
             bm.length = b[length]
@@ -181,6 +184,7 @@ open class DBConnection {
             bm.cs = b[cs]
             bm.od = b[od]
             bm.ar = b[ar]
+            bm.stars = b[stars]
             bm.minbpm = b[minbpm]
             bm.maxbpm = b[maxbpm]
             bm.length = b[length]
