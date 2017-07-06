@@ -31,15 +31,22 @@ class BeatmapList:UIView {
     }
     
     public func updateimg(image:UIImage?) {
-        if image == nil {
-            imageView.image = nil
-            return
+        if image != nil {
+            filter?.setValue(CIImage(image: image!), forKey: kCIInputImageKey)
+            let outciimage = filter?.outputImage!
+            let rect = CGRect(origin: .zero, size: (image?.size)!)
+            let cgimage = CIContext().createCGImage(outciimage!, from: rect)
+            UIView.transition(with: imageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                self.imageView.image = UIImage(cgImage: cgimage!)
+            }, completion: nil)
+        } else {
+            UIView.transition(with: imageView, duration: 0.3, options: .curveEaseOut, animations: {
+                self.imageView.alpha = 0
+            }, completion: { b in
+                self.imageView.image = nil
+                self.imageView.alpha = 1
+            })
         }
-        filter?.setValue(CIImage(image: image!), forKey: kCIInputImageKey)
-        let outciimage = filter?.outputImage!
-        let rect = CGRect(origin: .zero, size: (image?.size)!)
-        let cgimage = CIContext().createCGImage(outciimage!, from: rect)
-        imageView.image = UIImage(cgImage: cgimage!)
     }
     
 }
