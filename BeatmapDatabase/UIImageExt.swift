@@ -24,4 +24,16 @@ extension UIImage {
         return UIImage(cgImage: newImage!)
     }
     
+    //Reference: https://onevcat.com/2013/04/using-blending-in-ios/
+    open func image(withTint color:UIColor) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        let bounds = CGRect(origin: .zero, size: size)
+        UIRectFill(bounds)
+        draw(in: bounds, blendMode: .destinationIn, alpha: 1)
+        let tinted = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return tinted!
+    }
+    
 }

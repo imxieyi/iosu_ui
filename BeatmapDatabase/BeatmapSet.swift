@@ -41,4 +41,12 @@ open class BeatmapSet {
         return titles.count
     }
     
+    open func getSlaves(at:Int) -> [LiteBeatmap] {
+        return dict[titles[at]]!
+    }
+    
+    open func getSlaveCount(at: Int) -> Int {
+        return dict[titles[at]]!.count
+    }
+    
 }

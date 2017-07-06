@@ -16,12 +16,15 @@ class MasterCell:UITableViewCell {
     @IBOutlet var thumbImg: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     
+    public var id = 0
+    
     static let bgcolor = UIColor(colorLiteralRed: 0, green: 0.441, blue: 0.660, alpha: BeatmapList.globalAlpha)
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.selectionStyle = .none
-        self.backgroundColor = MasterCell.bgcolor
+        self.backgroundColor = .clear
+        self.contentView.backgroundColor = MasterCell.bgcolor
     }
     
     func updateData(obj:MasterCellModel) {
@@ -29,11 +32,16 @@ class MasterCell:UITableViewCell {
             if obj.thumb?.image != nil {
                 thumbImg.contentMode = .scaleToFill
                 thumbImg.image = obj.thumb?.image
-                self.backgroundColor = obj.thumb?.bg
+                self.contentView.backgroundColor = obj.thumb?.bg
                 titleLabel.textColor = obj.thumb?.fg
             }
         }
         titleLabel.text = obj.title
+    }
+    
+    @IBAction func btnTouched(_ sender: Any) {
+        TableView.current?.updateImage(index: id)
+        TableView.current?.updateSelection(index: id)
     }
     
 }
