@@ -38,6 +38,13 @@ class SlaveCell:UITableViewCell {
             label.textColor = SlaveCell.defaultFGColor
             stars.image = stars.image?.image(withTint: SlaveCell.defaultFGColor)
         }
+        let oldimg = (stars?.image?.cgImage)!
+        let newstars = stars?.image?.crop(rect: CGRect(origin: .zero, size: CGSize(width: CGFloat(oldimg.width) / 5 * CGFloat(obj.difficulty), height: CGFloat(oldimg.height))))
+        let oldbounds = (stars?.bounds)!
+        let oldframe = (stars?.frame)!
+        stars?.bounds = CGRect(origin: oldbounds.origin, size: CGSize(width: oldbounds.width / 5 * CGFloat(obj.difficulty), height: oldbounds.height))
+        stars.frame.origin = oldframe.origin
+        stars.image = newstars
     }
     
     func gencolor(ori:UIColor) -> UIColor {

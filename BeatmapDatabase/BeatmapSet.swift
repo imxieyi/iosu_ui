@@ -31,6 +31,9 @@ open class BeatmapSet {
             titles.append(title)
             dict[title] = [bm]
         }
+        dict[title]?.sort(by: { (a, b) -> Bool in
+            return a.stars < b.stars
+        })
     }
     
     open func getMasterMeta(at:Int) -> LiteBeatmap {

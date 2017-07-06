@@ -18,17 +18,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="500" height="32"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stars" translatesAutoresizingMaskIntoConstraints="NO" id="lae-wo-tgn">
-                        <rect key="frame" x="0.0" y="0.0" width="251" height="31"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pS-wM-fRn">
-                        <rect key="frame" x="259" y="1" width="233" height="29"/>
+                        <rect key="frame" x="137" y="0.0" width="358" height="32"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stars_5" translatesAutoresizingMaskIntoConstraints="NO" id="lae-wo-tgn">
+                        <rect key="frame" x="4" y="0.0" width="121" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -39,6 +39,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="stars" width="1002" height="128"/>
+        <image name="stars_5" width="485" height="128"/>
     </resources>
 </document>

@@ -57,7 +57,7 @@ class TableView:UITableView, UITableViewDelegate, UITableViewDataSource {
                     let nib = Bundle.main.loadNibNamed("SlaveCell", owner: self, options: nil)
                     cell = nib?.last as? SlaveCell
                 }
-                let model = SlaveCellModel(thumb: thumb, diff: 0, title: item.version!)
+                let model = SlaveCellModel(thumb: thumb, diff: item.stars, title: item.version!)
                 cell?.updateData(obj: model)
                 slavecells.append(cell!)
             }
