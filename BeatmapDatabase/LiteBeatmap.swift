@@ -233,10 +233,15 @@ open class LiteBeatmap{
                 break
             }
             let splitted=line.components(separatedBy: ":")
-            if splitted.count != 2 {
+            if splitted.count < 2 {
                 continue
             }
-            let value = splitted[1]
+            var value = splitted[1]
+            if splitted.count > 2 {
+                for i in 2...splitted.count - 1 {
+                    value.append(":" + splitted[i])
+                }
+            }
             switch splitted[0] {
             case "Artist":
                 artist = value
