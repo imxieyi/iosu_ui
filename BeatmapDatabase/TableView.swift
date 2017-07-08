@@ -107,7 +107,7 @@ class TableView:UITableView, UITableViewDelegate, UITableViewDataSource {
         return itemcounts[section]
     }
     
-    public func updateSelection(index: Int) {
+    public func updateSelection(index: Int) -> Bool {
         if index != selection {
             if selection != -1 {
                 var indexpath:[IndexPath] = []
@@ -126,7 +126,9 @@ class TableView:UITableView, UITableViewDelegate, UITableViewDataSource {
             }
             itemcounts[index] = indexpath.count
             insertRows(at: indexpath, with: .fade)
+            return true
         }
+        return false
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -17,12 +17,9 @@ class BeatmapList:UIView {
     
     public static let globalAlpha:Float = 0.7
     
-    //Reference: http://www.hangge.com/blog/cache/detail_1424.html
-    let filter = CIFilter(name: "CIGaussianBlur")
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        filter?.setValue(10, forKey: kCIInputRadiusKey)
     }
     
     override func awakeFromNib() {
@@ -32,6 +29,9 @@ class BeatmapList:UIView {
     
     public func updateimg(image:UIImage?) {
         if image != nil {
+            //Reference: http://www.hangge.com/blog/cache/detail_1424.html
+            let filter = CIFilter(name: "CIGaussianBlur")
+            filter?.setValue(10, forKey: kCIInputRadiusKey)
             filter?.setValue(CIImage(image: image!), forKey: kCIInputImageKey)
             let outciimage = filter?.outputImage!
             let rect = CGRect(origin: .zero, size: (image?.size)!)

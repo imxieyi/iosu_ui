@@ -40,8 +40,9 @@ class MasterCell:UITableViewCell {
     }
     
     @IBAction func btnTouched(_ sender: Any) {
-        TableView.current?.updateImage(index: id)
-        TableView.current?.updateSelection(index: id)
+        if (TableView.current?.updateSelection(index: id))! {
+            TableView.current?.updateImage(index: id)
+        }
     }
     
 }
