@@ -38,31 +38,33 @@ class TableView:UITableView, UITableViewDelegate, UITableViewDataSource {
     
     private func loadCells() {
         for i in 0...(set?.getMasterCount())! - 1 {
-            var cell:MasterCell? = self.dequeueReusableCell(withIdentifier: "MasterCell") as? MasterCell
-            if cell == nil {
-                let nib = Bundle.main.loadNibNamed("MasterCell", owner: self, options: nil)
-                cell = nib?.last as? MasterCell
-            }
-            let bm = set?.getMasterMeta(at: i)
-            let thumb = db?.getThumbnail(bm: bm!)
-            let model = MasterCellModel(thumb: thumb, bm: bm!)
-            cell?.updateData(obj: model)
-            cell?.id = i
-            mastercells.append(cell!)
-            let slaves = (set?.getSlaves(at: i))!
-            var slavecells:[UITableViewCell] = []
-            for item in slaves {
-                var cell:SlaveCell? = self.dequeueReusableCell(withIdentifier: "SlaveCell") as? SlaveCell
+            autoreleasepool {
+                var cell:MasterCell? = self.dequeueReusableCell(withIdentifier: "MasterCell") as? MasterCell
                 if cell == nil {
-                    let nib = Bundle.main.loadNibNamed("SlaveCell", owner: self, options: nil)
-                    cell = nib?.last as? SlaveCell
+                    let nib = Bundle.main.loadNibNamed("MasterCell", owner: self, options: nil)
+                    cell = nib?.last as? MasterCell
                 }
-                let model = SlaveCellModel(thumb: thumb, diff: item.stars, title: item.version!)
+                let bm = set?.getMasterMeta(at: i)
+                let thumb = db?.getThumbnail(bm: bm!)
+                let model = MasterCellModel(thumb: thumb, bm: bm!)
                 cell?.updateData(obj: model)
-                slavecells.append(cell!)
+                cell?.id = i
+                mastercells.append(cell!)
+                let slaves = (set?.getSlaves(at: i))!
+                var slavecells:[UITableViewCell] = []
+                for item in slaves {
+                    var cell:SlaveCell? = self.dequeueReusableCell(withIdentifier: "SlaveCell") as? SlaveCell
+                    if cell == nil {
+                        let nib = Bundle.main.loadNibNamed("SlaveCell", owner: self, options: nil)
+                        cell = nib?.last as? SlaveCell
+                    }
+                    let model = SlaveCellModel(thumb: thumb, diff: item.stars, title: item.version!)
+                    cell?.updateData(obj: model)
+                    slavecells.append(cell!)
+                }
+                self.slavecells.append(slavecells)
+                itemcounts.append(0)
             }
-            self.slavecells.append(slavecells)
-            itemcounts.append(0)
         }
     }
     
