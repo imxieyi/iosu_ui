@@ -12,21 +12,25 @@ import UIKit
 class DetailViewController:UIViewController {
     
     @IBOutlet var titleView: UIView!
-    @IBOutlet var difficultyView: UIView!
+    @IBOutlet var starView: UIView!
+    @IBOutlet var detailView: UIView!
     @IBOutlet var backBtn: UIButton!
     
     static var model:DetailViewModel? = nil
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleView = DetailViewController.model?.title
-        difficultyView = DetailViewController.model?.star
+        let atitle = NSKeyedArchiver.archivedData(withRootObject: DetailViewController.model?.title as Any)
+        let astar = NSKeyedArchiver.archivedData(withRootObject: DetailViewController.model?.star as Any)
+        let title = NSKeyedUnarchiver.unarchiveObject(with: atitle) as! UIView
+        let star = NSKeyedUnarchiver.unarchiveObject(with: astar) as! UIView
+        title.frame.origin = .zero
+        star.frame.origin = .zero
+        titleView.addSubview(title)
+        starView.addSubview(star)
         let fg = DetailViewController.model?.fg.lightenByPercentage(0.1)
-        backBtn.imageView?.image = backBtn.imageView?.image?.image(withTint: fg!)
+        backBtn.setImage(backBtn.imageView?.image?.image(withTint: fg!), for: UIControlState.normal)
+        detailView.backgroundColor = DetailViewController.model?.bg.lightenByPercentage(0.1)
     }
     
     @IBAction func backPressed(_ sender: Any) {
