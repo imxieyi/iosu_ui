@@ -14,8 +14,8 @@ class TableView:UITableView, UITableViewDelegate, UITableViewDataSource {
     private var db:DBConnection? = nil
     private var set:BeatmapSet? = nil
     
-    private var mastercells:[UITableViewCell] = []
-    private var slavecells:[[UITableViewCell]] = []
+    private var mastercells:[MasterCell] = []
+    private var slavecells:[[SlaveCell]] = []
     private var itemcounts:[Int] = []
     public var selection = -1
     
@@ -51,7 +51,7 @@ class TableView:UITableView, UITableViewDelegate, UITableViewDataSource {
                 cell?.id = i
                 mastercells.append(cell!)
                 let slaves = (set?.getSlaves(at: i))!
-                var slavecells:[UITableViewCell] = []
+                var slavecells:[SlaveCell] = []
                 for item in slaves {
                     var cell:SlaveCell? = self.dequeueReusableCell(withIdentifier: "SlaveCell") as? SlaveCell
                     if cell == nil {
@@ -81,7 +81,6 @@ class TableView:UITableView, UITableViewDelegate, UITableViewDataSource {
     }
     
     public func updateImage(index:Int) {
-        let sview = superview as! BeatmapList
         let bm = set?.getMasterMeta(at: index)
         if bm?.bgimg != nil {
             if bm?.bgimg != "" {
@@ -91,16 +90,26 @@ class TableView:UITableView, UITableViewDelegate, UITableViewDataSource {
                 do {
                     let data = try Data(contentsOf: path)
                     let img = UIImage(data: data)
-                    sview.updateimg(image: img)
+                    ContainerViewController.current?.updateimg(image: img)
                 } catch {
-                    sview.updateimg(image: nil)
+                    ContainerViewController.current?.updateimg(image: nil)
                 }
             } else {
-                sview.updateimg(image: nil)
+                ContainerViewController.current?.updateimg(image: nil)
             }
         } else {
-            sview.updateimg(image: nil)
+            ContainerViewController.current?.updateimg(image: nil)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let m = mastercells[indexPath.section]
+        let s = slavecells[indexPath.section][indexPath.item]
+        let model = DetailViewModel(m.contentView, s.contentView, m.fg, m.bg)
+        DetailViewController.model = model
+        let story = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let detailview = story.instantiateViewController(withIdentifier: "detail") as! DetailViewController
+        ListViewController.current?.navigationController?.pushViewController(detailview, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

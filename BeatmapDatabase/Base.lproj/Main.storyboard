@@ -50,22 +50,41 @@
                         <outlet property="loadLabel" destination="vNh-nA-HNR" id="9X7-WD-1Ud"/>
                         <outlet property="loadProgress" destination="al8-iW-Ump" id="ulo-Nb-gSu"/>
                         <outlet property="progLabel" destination="GpF-AC-LB2" id="OJQ-Jo-9nz"/>
-                        <segue destination="baq-6Q-LWC" kind="showDetail" identifier="showmain" action="showViewController:sender:" id="pIy-Nc-XL1"/>
+                        <segue destination="baq-6Q-LWC" kind="presentation" identifier="showmain" modalTransitionStyle="crossDissolve" id="vdE-1h-dXv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65" y="38"/>
+            <point key="canvasLocation" x="-8" y="38"/>
         </scene>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="xtn-Bh-Jl3">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="yIK-an-vEW" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BAT-UJ-QCA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gbg-Fx-xAH" kind="relationship" relationship="rootViewController" id="9uC-12-b2v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HsX-TL-W0L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-9" y="961"/>
+        </scene>
+        <!--Container View Controller-->
         <scene sceneID="Ill-uK-cmQ">
             <objects>
-                <viewController id="baq-6Q-LWC" sceneMemberID="viewController">
+                <viewController id="baq-6Q-LWC" customClass="ContainerViewController" customModule="BeatmapDatabase" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kca-Oh-Nlb"/>
                         <viewControllerLayoutGuide type="bottom" id="7oO-nD-2ce"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CYD-Xw-ocw" customClass="BeatmapList" customModule="BeatmapDatabase" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="CYD-Xw-ocw">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -73,6 +92,78 @@
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f6f-gQ-i2E">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <segue destination="yIK-an-vEW" kind="embed" id="LPa-Oj-mHI"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.19215686269999999" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sD6-RC-OK1"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imgView" destination="dWt-2g-JUx" id="yEL-yD-F6v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1IQ-IX-8mO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="734.48275862068976" y="37.600000000000001"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Ps7-7l-k9g">
+            <objects>
+                <viewController storyboardIdentifier="detail" id="2B2-yB-uGA" customClass="DetailViewController" customModule="BeatmapDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3yJ-QR-b1N"/>
+                        <viewControllerLayoutGuide type="bottom" id="bXE-Ho-Eid"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NRh-dW-9sX">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CZx-lY-qP3">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15b-Fp-wVm">
+                                <rect key="frame" x="0.0" y="64" width="667" height="32"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JF5-xK-zap">
+                                <rect key="frame" x="0.0" y="311" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="2B2-yB-uGA" eventType="touchUpInside" id="Svo-jZ-Jcp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="backBtn" destination="JF5-xK-zap" id="2Sk-AP-XJY"/>
+                        <outlet property="difficultyView" destination="15b-Fp-wVm" id="yhh-wF-g80"/>
+                        <outlet property="titleView" destination="CZx-lY-qP3" id="07a-qD-fZk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zac-8A-b9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1447" y="961"/>
+        </scene>
+        <!--List View Controller-->
+        <scene sceneID="mcw-7n-a79">
+            <objects>
+                <viewController id="gbg-Fx-xAH" customClass="ListViewController" customModule="BeatmapDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aTR-0q-Zmh" customClass="BeatmapList" customModule="BeatmapDatabase" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="   Let's Rock!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKp-dY-xJN">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="64"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -92,20 +183,23 @@
                                 <state key="normal" image="gear"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.19215686269999999" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <connections>
-                            <outlet property="headLabel" destination="jKp-dY-xJN" id="UXW-Yd-pdk"/>
-                            <outlet property="imageView" destination="dWt-2g-JUx" id="YU7-HQ-yAN"/>
+                            <outlet property="headLabel" destination="jKp-dY-xJN" id="LjQ-lf-xg5"/>
                         </connections>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
+                    <navigationItem key="navigationItem" id="gaM-WX-k0C"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="2B2-yB-uGA" kind="showDetail" identifier="showdetail" id="hFt-R8-nra"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1IQ-IX-8mO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NQ1-jO-AtQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="734.48275862068976" y="37.600000000000001"/>
+            <point key="canvasLocation" x="734" y="962"/>
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="128" height="128"/>
         <image name="gear" width="128" height="128"/>
     </resources>
 </document>

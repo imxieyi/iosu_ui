@@ -16,6 +16,9 @@ class MasterCell:UITableViewCell {
     @IBOutlet var thumbImg: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     
+    public var fg = UIColor()
+    public var bg = UIColor()
+    
     public var id = 0
     
     static let bgcolor = UIColor(colorLiteralRed: 0, green: 0.441, blue: 0.660, alpha: BeatmapList.globalAlpha)
@@ -37,6 +40,8 @@ class MasterCell:UITableViewCell {
             }
         }
         titleLabel.text = obj.title
+        fg = titleLabel.textColor
+        bg = contentView.backgroundColor!
     }
     
     @IBAction func btnTouched(_ sender: Any) {

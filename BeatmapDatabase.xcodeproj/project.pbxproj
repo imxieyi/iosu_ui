@@ -38,6 +38,9 @@
 		8A889DAA1F0A6D9E00834303 /* BeatmapScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A889DA81F0A6D9E00834303 /* BeatmapScanner.swift */; };
 		8A889DAB1F0A6D9E00834303 /* LiteBeatmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A889DA91F0A6D9E00834303 /* LiteBeatmap.swift */; };
 		8AA1AD181F0A98AA0083CA11 /* DatabaseAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA1AD171F0A98AA0083CA11 /* DatabaseAccess.swift */; };
+		8AF096CD1F113DE3008027E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF096CC1F113DE3008027E9 /* DetailViewController.swift */; };
+		8AF096CF1F113E9F008027E9 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF096CE1F113E9F008027E9 /* ListViewController.swift */; };
+		8AF096D11F11550F008027E9 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF096D01F11550F008027E9 /* ContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -93,6 +96,9 @@
 		8A889DA91F0A6D9E00834303 /* LiteBeatmap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiteBeatmap.swift; sourceTree = "<group>"; };
 		8A889DAC1F0A6E1700834303 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../Library/Developer/Xcode/DerivedData/BeatmapDatabase-cflizjmvcjlapnaqiyzzyolzdmep/Build/Products/Debug-iphoneos/SQLite.swift/SQLite.framework"; sourceTree = "<group>"; };
 		8AA1AD171F0A98AA0083CA11 /* DatabaseAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseAccess.swift; sourceTree = "<group>"; };
+		8AF096CC1F113DE3008027E9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8AF096CE1F113E9F008027E9 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		8AF096D01F11550F008027E9 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		E1B514AEB91F17985E2D640A /* Pods_BeatmapDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeatmapDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -172,6 +178,9 @@
 				8A70F9961F0E657000D2226D /* iosu-Bridging-Header.h */,
 				8A70F98E1F0E656900D2226D /* UIBezierPath-Length */,
 				8A70F9971F0E6C0600D2226D /* AiModtpDifficulty.swift */,
+				8AF096CC1F113DE3008027E9 /* DetailViewController.swift */,
+				8AF096CE1F113E9F008027E9 /* ListViewController.swift */,
+				8AF096D01F11550F008027E9 /* ContainerViewController.swift */,
 			);
 			path = BeatmapDatabase;
 			sourceTree = "<group>";
@@ -332,6 +341,7 @@
 				8AA1AD181F0A98AA0083CA11 /* DatabaseAccess.swift in Sources */,
 				8A70F7131F0E5F9B00D2226D /* TpHitObject.swift in Sources */,
 				8A70F7071F0E5B9800D2226D /* VectorMath.swift in Sources */,
+				8AF096CD1F113DE3008027E9 /* DetailViewController.swift in Sources */,
 				8A889DAB1F0A6D9E00834303 /* LiteBeatmap.swift in Sources */,
 				8A889D991F0A6D9200834303 /* ViewController.swift in Sources */,
 				8A889D971F0A6D9200834303 /* AppDelegate.swift in Sources */,
@@ -339,8 +349,10 @@
 				8A70F9981F0E6C0600D2226D /* AiModtpDifficulty.swift in Sources */,
 				8A70F70F1F0E5CD000D2226D /* HitObjectEnums.swift in Sources */,
 				8A883EDE1F0BB51000153470 /* TableView.swift in Sources */,
+				8AF096D11F11550F008027E9 /* ContainerViewController.swift in Sources */,
 				8A70F70D1F0E5C9400D2226D /* LiteSlider.swift in Sources */,
 				8A889DAA1F0A6D9E00834303 /* BeatmapScanner.swift in Sources */,
+				8AF096CF1F113E9F008027E9 /* ListViewController.swift in Sources */,
 				8A70F9951F0E656900D2226D /* UIBezierPath+Length.m in Sources */,
 				8A883EDC1F0BB2DD00153470 /* MasterCell.swift in Sources */,
 				8A537D431F0B3B89008EEDF8 /* UIImageExt.swift in Sources */,
