@@ -86,6 +86,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.19215686274509802" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1A-ty-TLk">
+                                <rect key="frame" x="603" y="0.0" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="gear"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.19215686269999999" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <connections>
@@ -93,10 +98,14 @@
                             <outlet property="imageView" destination="dWt-2g-JUx" id="YU7-HQ-yAN"/>
                         </connections>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1IQ-IX-8mO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="734.48275862068976" y="37.600000000000001"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gear" width="128" height="128"/>
+    </resources>
 </document>
