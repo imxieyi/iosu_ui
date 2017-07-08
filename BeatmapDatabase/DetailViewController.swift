@@ -37,6 +37,10 @@ class DetailViewController:UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func edgeSwiped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 class DetailViewModel:NSObject {

@@ -149,6 +149,10 @@
                                 </subviews>
                             </view>
                         </subviews>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="A4b-Vf-gIr" appends="YES" id="CC5-Ie-HCB"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="JF5-xK-zap" id="2Sk-AP-XJY"/>
@@ -158,6 +162,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zac-8A-b9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="A4b-Vf-gIr">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="edgeSwiped:" destination="2B2-yB-uGA" id="RyS-Gi-mPZ"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="701" y="1761"/>
         </scene>
