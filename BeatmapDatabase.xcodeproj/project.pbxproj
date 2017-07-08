@@ -41,6 +41,7 @@
 		8AF096CD1F113DE3008027E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF096CC1F113DE3008027E9 /* DetailViewController.swift */; };
 		8AF096CF1F113E9F008027E9 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF096CE1F113E9F008027E9 /* ListViewController.swift */; };
 		8AF096D11F11550F008027E9 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF096D01F11550F008027E9 /* ContainerViewController.swift */; };
+		8AF096D31F1163BB008027E9 /* TransparentNaviCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF096D21F1163BB008027E9 /* TransparentNaviCtrl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -99,6 +100,7 @@
 		8AF096CC1F113DE3008027E9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8AF096CE1F113E9F008027E9 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		8AF096D01F11550F008027E9 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		8AF096D21F1163BB008027E9 /* TransparentNaviCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentNaviCtrl.swift; sourceTree = "<group>"; };
 		E1B514AEB91F17985E2D640A /* Pods_BeatmapDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeatmapDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -181,6 +183,7 @@
 				8AF096CC1F113DE3008027E9 /* DetailViewController.swift */,
 				8AF096CE1F113E9F008027E9 /* ListViewController.swift */,
 				8AF096D01F11550F008027E9 /* ContainerViewController.swift */,
+				8AF096D21F1163BB008027E9 /* TransparentNaviCtrl.swift */,
 			);
 			path = BeatmapDatabase;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				8A883EDC1F0BB2DD00153470 /* MasterCell.swift in Sources */,
 				8A537D431F0B3B89008EEDF8 /* UIImageExt.swift in Sources */,
 				8A883EE81F0BC96F00153470 /* Thumbnail.swift in Sources */,
+				8AF096D31F1163BB008027E9 /* TransparentNaviCtrl.swift in Sources */,
 				8A883ED81F0BADDE00153470 /* BeatmapSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

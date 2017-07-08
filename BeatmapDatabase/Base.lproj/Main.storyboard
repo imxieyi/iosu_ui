@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="-737" y="161"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Transparent Navi Ctrl-->
         <scene sceneID="xtn-Bh-Jl3">
             <objects>
-                <navigationController navigationBarHidden="YES" id="yIK-an-vEW" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="yIK-an-vEW" customClass="TransparentNaviCtrl" customModule="BeatmapDatabase" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -165,6 +165,10 @@
         <scene sceneID="mcw-7n-a79">
             <objects>
                 <viewController id="gbg-Fx-xAH" customClass="ListViewController" customModule="BeatmapDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GvH-fp-ySA"/>
+                        <viewControllerLayoutGuide type="bottom" id="vV9-G4-WgL"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aTR-0q-Zmh" customClass="BeatmapList" customModule="BeatmapDatabase" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
