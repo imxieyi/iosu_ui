@@ -32,11 +32,11 @@ class TableView:UITableView, UITableViewDelegate, UITableViewDataSource {
             set = try db?.allBeatmaps()
             loadCells()
         } catch let error {
-            print(error)
+            debugPrint(error)
         }
     }
     
-    private func loadCells() {
+    public func loadCells() {
         for i in 0...(set?.getMasterCount())! - 1 {
             autoreleasepool {
                 var cell:MasterCell? = self.dequeueReusableCell(withIdentifier: "MasterCell") as? MasterCell

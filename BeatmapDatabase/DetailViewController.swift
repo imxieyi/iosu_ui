@@ -15,6 +15,7 @@ class DetailViewController:UIViewController {
     @IBOutlet var starView: UIView!
     @IBOutlet var detailView: UIView!
     @IBOutlet var backBtn: UIButton!
+    @IBOutlet var playBtn: UIButton!
     
     static var model:DetailViewModel? = nil
     
@@ -29,7 +30,8 @@ class DetailViewController:UIViewController {
         titleView.addSubview(title)
         starView.addSubview(star)
         let fg = DetailViewController.model?.fg.lightenByPercentage(0.1)
-        backBtn.setImage(backBtn.imageView?.image?.image(withTint: fg!), for: UIControlState.normal)
+        backBtn.setImage(backBtn.imageView?.image?.image(withTint: fg!), for: .normal)
+        playBtn.setImage(playBtn.imageView?.image?.image(withTint: fg!), for: .normal)
         detailView.backgroundColor = DetailViewController.model?.bg.lightenByPercentage(0.1)
     }
     

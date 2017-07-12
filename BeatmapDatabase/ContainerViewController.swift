@@ -15,6 +15,8 @@ class ContainerViewController:UIViewController {
     
     public static var current:ContainerViewController? = nil
     
+    private static var defaultbg:UIImage? = nil
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         ContainerViewController.current = self
@@ -25,7 +27,18 @@ class ContainerViewController:UIViewController {
         ContainerViewController.current = self
     }
     
+    override func viewDidLoad() {
+        let filter = CIFilter(name: "CIGaussianBlur")
+        filter?.setValue(10, forKey: kCIInputRadiusKey)
+        filter?.setValue(CIImage(image: imgView.image!), forKey: kCIInputImageKey)
+        let outciimage = filter?.outputImage!
+        let rect = CGRect(origin: .zero, size: (imgView.image?.size)!)
+        let cgimage = CIContext().createCGImage(outciimage!, from: rect)
+        ContainerViewController.defaultbg = UIImage(cgImage: cgimage!)
+    }
+    
     public func updateimg(image:UIImage?) {
+        var newimg:UIImage? = nil
         if image != nil {
             //Reference: http://www.hangge.com/blog/cache/detail_1424.html
             let filter = CIFilter(name: "CIGaussianBlur")
@@ -34,17 +47,13 @@ class ContainerViewController:UIViewController {
             let outciimage = filter?.outputImage!
             let rect = CGRect(origin: .zero, size: (image?.size)!)
             let cgimage = CIContext().createCGImage(outciimage!, from: rect)
-            UIView.transition(with: imgView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                self.imgView.image = UIImage(cgImage: cgimage!)
-            }, completion: nil)
+            newimg = UIImage(cgImage: cgimage!)
         } else {
-            UIView.transition(with: imgView, duration: 0.3, options: .curveEaseOut, animations: {
-                self.imgView.alpha = 0
-            }, completion: { b in
-                self.imgView.image = nil
-                self.imgView.alpha = 1
-            })
+            newimg = ContainerViewController.defaultbg
         }
+        UIView.transition(with: imgView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.imgView.image = newimg
+        }, completion: nil)
     }
     
 }

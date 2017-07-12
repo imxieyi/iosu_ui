@@ -17,3 +17,4 @@ This is the UI implementation for iosu. The sketch file can be found [here](http
  - [AiModtpDifficultyCalculator](https://github.com/Tom94/AiModtpDifficultyCalculator)
  - [VectorMath](https://github.com/nicklockwood/VectorMath)
  - [UIBezierPath-Length](https://github.com/ImJCabus/UIBezierPath-Length)
+ - [Default Background Image](https://www.pixiv.net/member_illust.php?mode=medium&illust_id=63797333）

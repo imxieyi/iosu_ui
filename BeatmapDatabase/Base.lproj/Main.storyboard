@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="baq-6Q-LWC">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Load View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BeatmapDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoadViewController" customModule="BeatmapDatabase" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -43,19 +43,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.19215686274509802" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.0" green="0.19215686274509802" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Dxl-bt-jZM"/>
                     <connections>
                         <outlet property="loadLabel" destination="vNh-nA-HNR" id="9X7-WD-1Ud"/>
                         <outlet property="loadProgress" destination="al8-iW-Ump" id="ulo-Nb-gSu"/>
                         <outlet property="progLabel" destination="GpF-AC-LB2" id="OJQ-Jo-9nz"/>
-                        <segue destination="baq-6Q-LWC" kind="presentation" identifier="showmain" modalTransitionStyle="crossDissolve" id="vdE-1h-dXv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-737" y="161"/>
+            <point key="canvasLocation" x="-9" y="958"/>
         </scene>
         <!--Transparent Navi Ctrl-->
         <scene sceneID="xtn-Bh-Jl3">
@@ -69,12 +68,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="gbg-Fx-xAH" kind="relationship" relationship="rootViewController" id="9uC-12-b2v"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mGn-Ua-vma"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HsX-TL-W0L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9" y="961"/>
+            <point key="canvasLocation" x="-9" y="182"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="Ill-uK-cmQ">
@@ -88,7 +87,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dWt-2g-JUx">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultbg" translatesAutoresizingMaskIntoConstraints="NO" id="dWt-2g-JUx">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -112,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1IQ-IX-8mO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9" y="161"/>
+            <point key="canvasLocation" x="-699" y="182"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Ps7-7l-k9g">
@@ -146,6 +145,11 @@
                                             <action selector="backPressed:" destination="2B2-yB-uGA" eventType="touchUpInside" id="Svo-jZ-Jcp"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayj-mq-bln">
+                                        <rect key="frame" x="603" y="215" width="64" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        <state key="normal" image="play"/>
+                                    </button>
                                 </subviews>
                             </view>
                         </subviews>
@@ -157,6 +161,7 @@
                     <connections>
                         <outlet property="backBtn" destination="JF5-xK-zap" id="2Sk-AP-XJY"/>
                         <outlet property="detailView" destination="g7d-yE-lsR" id="cVJ-UK-reC"/>
+                        <outlet property="playBtn" destination="ayj-mq-bln" id="PFr-1C-ngO"/>
                         <outlet property="starView" destination="g7o-BZ-Aeu" id="LQ3-9T-5iY"/>
                         <outlet property="titleView" destination="lwB-qQ-zZ2" id="KaU-gs-f6I"/>
                     </connections>
@@ -169,12 +174,12 @@
                     </connections>
                 </screenEdgePanGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="701" y="1761"/>
+            <point key="canvasLocation" x="672" y="1721"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="mcw-7n-a79">
             <objects>
-                <viewController id="gbg-Fx-xAH" customClass="ListViewController" customModule="BeatmapDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="listview" id="gbg-Fx-xAH" customClass="ListViewController" customModule="BeatmapDatabase" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GvH-fp-ySA"/>
                         <viewControllerLayoutGuide type="bottom" id="vV9-G4-WgL"/>
@@ -200,6 +205,9 @@
                                 <rect key="frame" x="603" y="0.0" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="gear"/>
+                                <connections>
+                                    <action selector="settingClicked:" destination="gbg-Fx-xAH" eventType="touchUpInside" id="JSq-ao-V4C"/>
+                                </connections>
                             </button>
                         </subviews>
                         <connections>
@@ -209,16 +217,69 @@
                     <navigationItem key="navigationItem" id="gaM-WX-k0C"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <segue destination="2B2-yB-uGA" kind="showDetail" identifier="showdetail" id="hFt-R8-nra"/>
+                        <outlet property="tableview" destination="4Pd-cm-oys" id="dEH-kV-RFz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQ1-jO-AtQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9" y="1761"/>
+            <point key="canvasLocation" x="-9" y="1722"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="TUc-ds-c37">
+            <objects>
+                <viewController storyboardIdentifier="settings" id="brr-eV-7vB" customClass="SettingViewController" customModule="BeatmapDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JqV-Tc-n2w"/>
+                        <viewControllerLayoutGuide type="bottom" id="AMv-zM-2Cd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X1N-B6-muo">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="         What's on your mind?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8E-90-qVy">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" red="0.0" green="0.4431372549" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m24-xJ-evD">
+                                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backClicked:" destination="brr-eV-7vB" eventType="touchUpInside" id="xRg-F5-Koy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="k6h-aR-H4Y" appends="YES" id="b2s-LO-44k"/>
+                        </connections>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="headLabel" destination="a8E-90-qVy" id="8zV-Sg-KOC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3od-7J-3Hg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="k6h-aR-H4Y">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="edgeSwiped:" destination="brr-eV-7vB" id="6AI-T8-eBH"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-9.4452773613193415" y="2493.5999999999999"/>
         </scene>
     </scenes>
     <resources>
         <image name="back" width="128" height="128"/>
+        <image name="defaultbg" width="800" height="565"/>
         <image name="gear" width="128" height="128"/>
+        <image name="play" width="128" height="128"/>
     </resources>
 </document>

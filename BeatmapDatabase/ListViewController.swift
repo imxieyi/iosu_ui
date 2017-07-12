@@ -12,6 +12,7 @@ import UIKit
 class ListViewController:UIViewController {
     
     public static var current:ListViewController? = nil
+    @IBOutlet var tableview: TableView!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -21,6 +22,12 @@ class ListViewController:UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         ListViewController.current = self
+    }
+    
+    @IBAction func settingClicked(_ sender: Any) {
+        let story = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let detailview = story.instantiateViewController(withIdentifier: "settings") 
+        ListViewController.current?.navigationController?.pushViewController(detailview, animated: true)
     }
     
 }

@@ -10,7 +10,7 @@ import UIKit
 import SQLite
 import Async
 
-class ViewController: UIViewController {
+class LoadViewController: UIViewController {
     
     @IBOutlet var loadLabel: UILabel!
     @IBOutlet var loadProgress: UIProgressView!
@@ -85,6 +85,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         debugPrint(LiteBeatmap.docURL)
+        self.loadLabel.backgroundColor = UIColor(colorLiteralRed: 0.398, green: 0.797, blue: 1, alpha: BeatmapList.globalAlpha)
+        self.view.backgroundColor = UIColor(colorLiteralRed: 0, green: 0.192, blue: 0.285, alpha: BeatmapList.globalAlpha)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -100,7 +102,10 @@ class ViewController: UIViewController {
                 self.progLabel.text = "Loading beatmap list..."
             }.wait()
             Async.main {
-                self.performSegue(withIdentifier: "showmain", sender: self)
+                let story = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let listview = story.instantiateViewController(withIdentifier: "listview") as! ListViewController
+                ContainerViewController.current?.updateimg(image: nil)
+                self.navigationController?.pushViewController(listview, animated: true)
             }
         }
     }

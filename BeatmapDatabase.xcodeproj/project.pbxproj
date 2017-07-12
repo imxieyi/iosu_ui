@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		388768B76F9054423829D6B2 /* Pods_BeatmapDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B514AEB91F17985E2D640A /* Pods_BeatmapDatabase.framework */; };
+		8A50159D1F121A6000751BA9 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A50159C1F121A6000751BA9 /* SettingViewController.swift */; };
 		8A537D431F0B3B89008EEDF8 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A537D421F0B3B89008EEDF8 /* UIImageExt.swift */; };
 		8A70F7021F0E28B000D2226D /* SlaveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A70F7011F0E28B000D2226D /* SlaveCell.xib */; };
 		8A70F7041F0E2ADA00D2226D /* SlaveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F7031F0E2ADA00D2226D /* SlaveCell.swift */; };
@@ -31,7 +32,7 @@
 		8A883EEA1F0BE13300153470 /* BeatmapList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A883EE91F0BE13300153470 /* BeatmapList.swift */; };
 		8A883EEC1F0BE1F000153470 /* UIColor_Hex_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A883EEB1F0BE1F000153470 /* UIColor_Hex_Swift.framework */; };
 		8A889D971F0A6D9200834303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A889D961F0A6D9200834303 /* AppDelegate.swift */; };
-		8A889D991F0A6D9200834303 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A889D981F0A6D9200834303 /* ViewController.swift */; };
+		8A889D991F0A6D9200834303 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A889D981F0A6D9200834303 /* LoadViewController.swift */; };
 		8A889D9C1F0A6D9200834303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A889D9A1F0A6D9200834303 /* Main.storyboard */; };
 		8A889D9E1F0A6D9200834303 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A889D9D1F0A6D9200834303 /* Assets.xcassets */; };
 		8A889DA11F0A6D9200834303 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A889D9F1F0A6D9200834303 /* LaunchScreen.storyboard */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		394F4C14372F540026092DB8 /* Pods-BeatmapDatabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeatmapDatabase.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeatmapDatabase/Pods-BeatmapDatabase.release.xcconfig"; sourceTree = "<group>"; };
 		53C6876BA8FBA18DFCC299EA /* Pods-BeatmapDatabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeatmapDatabase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeatmapDatabase/Pods-BeatmapDatabase.debug.xcconfig"; sourceTree = "<group>"; };
+		8A50159C1F121A6000751BA9 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		8A537D421F0B3B89008EEDF8 /* UIImageExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		8A70F7011F0E28B000D2226D /* SlaveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlaveCell.xib; sourceTree = "<group>"; };
 		8A70F7031F0E2ADA00D2226D /* SlaveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlaveCell.swift; sourceTree = "<group>"; };
@@ -88,7 +90,7 @@
 		8A883EEB1F0BE1F000153470 /* UIColor_Hex_Swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIColor_Hex_Swift.framework; path = "../../Library/Developer/Xcode/DerivedData/BeatmapDatabase-cflizjmvcjlapnaqiyzzyolzdmep/Build/Products/Debug-iphonesimulator/UIColor_Hex_Swift/UIColor_Hex_Swift.framework"; sourceTree = "<group>"; };
 		8A889D931F0A6D9200834303 /* BeatmapDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeatmapDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A889D961F0A6D9200834303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8A889D981F0A6D9200834303 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		8A889D981F0A6D9200834303 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		8A889D9B1F0A6D9200834303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A889D9D1F0A6D9200834303 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A889DA01F0A6D9200834303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -158,7 +160,7 @@
 				8A883EE71F0BC96F00153470 /* Thumbnail.swift */,
 				8A889DA91F0A6D9E00834303 /* LiteBeatmap.swift */,
 				8A889D961F0A6D9200834303 /* AppDelegate.swift */,
-				8A889D981F0A6D9200834303 /* ViewController.swift */,
+				8A889D981F0A6D9200834303 /* LoadViewController.swift */,
 				8A889D9A1F0A6D9200834303 /* Main.storyboard */,
 				8A889D9D1F0A6D9200834303 /* Assets.xcassets */,
 				8A889D9F1F0A6D9200834303 /* LaunchScreen.storyboard */,
@@ -184,6 +186,7 @@
 				8AF096CE1F113E9F008027E9 /* ListViewController.swift */,
 				8AF096D01F11550F008027E9 /* ContainerViewController.swift */,
 				8AF096D21F1163BB008027E9 /* TransparentNaviCtrl.swift */,
+				8A50159C1F121A6000751BA9 /* SettingViewController.swift */,
 			);
 			path = BeatmapDatabase;
 			sourceTree = "<group>";
@@ -346,8 +349,9 @@
 				8A70F7071F0E5B9800D2226D /* VectorMath.swift in Sources */,
 				8AF096CD1F113DE3008027E9 /* DetailViewController.swift in Sources */,
 				8A889DAB1F0A6D9E00834303 /* LiteBeatmap.swift in Sources */,
-				8A889D991F0A6D9200834303 /* ViewController.swift in Sources */,
+				8A889D991F0A6D9200834303 /* LoadViewController.swift in Sources */,
 				8A889D971F0A6D9200834303 /* AppDelegate.swift in Sources */,
+				8A50159D1F121A6000751BA9 /* SettingViewController.swift in Sources */,
 				8A70F70B1F0E5C9400D2226D /* LiteHitCircle.swift in Sources */,
 				8A70F9981F0E6C0600D2226D /* AiModtpDifficulty.swift in Sources */,
 				8A70F70F1F0E5CD000D2226D /* HitObjectEnums.swift in Sources */,
