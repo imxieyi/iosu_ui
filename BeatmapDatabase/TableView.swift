@@ -30,7 +30,9 @@ class TableView:UITableView, UITableViewDelegate, UITableViewDataSource {
         do {
             db = try DBConnection()
             set = try db?.allBeatmaps()
-            loadCells()
+            if (set?.getMasterCount())! > 0 {
+                loadCells()
+            }
         } catch let error {
             debugPrint(error)
         }
