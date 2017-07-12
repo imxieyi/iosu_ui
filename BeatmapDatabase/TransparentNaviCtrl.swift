@@ -57,22 +57,29 @@ class PushTransition:NSObject, UIViewControllerAnimatedTransitioning {
             fromDestinationFrame?.origin.x = width
         }
         
+        // Create a screenshot of the fromView
+        let fromshot = (from?.snapshotView(afterScreenUpdates: false))!
+        fromshot.frame = (from?.frame)!
+        container.addSubview(fromshot)
+        
         // Create a screenshot of the toView.
         let move = (to?.snapshotView(afterScreenUpdates: true))!
         move.frame = (to?.frame)!
         container.addSubview(move)
         
+        from?.removeFromSuperview()
+        
         UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, usingSpringWithDamping: 1000, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             move.frame = container.frame
-            from?.frame = fromDestinationFrame!
+            fromshot.frame = fromDestinationFrame!
         }, completion: { finished in
             if !container.subviews.contains(to!) {
                 container.addSubview(to!)
             }
             
             to?.frame = container.frame
-            from?.removeFromSuperview()
             move.removeFromSuperview()
+            fromshot.removeFromSuperview()
             transitionContext.completeTransition(true)
         })
     }

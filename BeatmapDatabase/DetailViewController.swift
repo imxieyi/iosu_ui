@@ -29,14 +29,23 @@ class DetailViewController:UIViewController {
         star.frame.origin = .zero
         titleView.addSubview(title)
         starView.addSubview(star)
-        let fg = DetailViewController.model?.fg.lightenByPercentage(0.1)
-        backBtn.setImage(backBtn.imageView?.image?.image(withTint: fg!), for: .normal)
-        playBtn.setImage(playBtn.imageView?.image?.image(withTint: fg!), for: .normal)
+        backBtn.setImage(backBtn.imageView?.image?.image(withTint: DetailViewController.model!.fg), for: .normal)
+        playBtn.setImage(playBtn.imageView?.image?.image(withTint: DetailViewController.model!.fg), for: .normal)
         detailView.backgroundColor = DetailViewController.model?.bg.lightenByPercentage(0.1)
     }
     
     @IBAction func backPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func playPressed(_ sender: Any) {
+        let story = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let gameloadview = story.instantiateViewController(withIdentifier: "gameload")
+        ListViewController.current?.navigationController?.pushViewController(gameloadview, animated: true)
+        var stack = self.navigationController?.viewControllers
+        stack?.remove(at: 1)
+        self.navigationController?.setViewControllers(stack!, animated: false)
+        ContainerViewController.current?.setblur(false)
     }
     
     @IBAction func edgeSwiped(_ sender: Any) {
@@ -55,7 +64,7 @@ class DetailViewModel:NSObject {
     init(_ title:UIView, _ star:UIView, _ fg:UIColor, _ bg:UIColor) {
         self.title = title
         self.star = star
-        self.fg = fg
+        self.fg = fg.lightenByPercentage(0.1)
         self.bg = bg
     }
     

@@ -149,6 +149,9 @@
                                         <rect key="frame" x="603" y="215" width="64" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                         <state key="normal" image="play"/>
+                                        <connections>
+                                            <action selector="playPressed:" destination="2B2-yB-uGA" eventType="touchUpInside" id="JDi-Y9-MCF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </view>
@@ -175,6 +178,42 @@
                 </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="672" y="1721"/>
+        </scene>
+        <!--Load Map View Controller-->
+        <scene sceneID="Opr-oq-7np">
+            <objects>
+                <viewController storyboardIdentifier="gameload" id="NVx-aS-ohf" customClass="LoadMapViewController" customModule="BeatmapDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aNX-jS-ePm"/>
+                        <viewControllerLayoutGuide type="bottom" id="ncc-wa-gER"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WRb-iU-RlV">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loadloop" translatesAutoresizingMaskIntoConstraints="NO" id="6GO-6p-hah">
+                                <rect key="frame" x="291" y="155" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="axR-qL-BvU" appends="YES" id="ndM-LU-bgC"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="loopImg" destination="6GO-6p-hah" id="q3F-C8-zha"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qii-pa-kLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="axR-qL-BvU">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="edgeSwiped:" destination="NVx-aS-ohf" id="4j6-Fb-vd5"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1350.6746626686659" y="1720.8"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="mcw-7n-a79">
@@ -280,6 +319,7 @@
         <image name="back" width="128" height="128"/>
         <image name="defaultbg" width="800" height="565"/>
         <image name="gear" width="128" height="128"/>
+        <image name="loadloop" width="128" height="128"/>
         <image name="play" width="128" height="128"/>
     </resources>
 </document>

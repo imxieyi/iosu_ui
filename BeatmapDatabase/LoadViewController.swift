@@ -106,6 +106,10 @@ class LoadViewController: UIViewController {
                 let listview = story.instantiateViewController(withIdentifier: "listview") as! ListViewController
                 ContainerViewController.current?.updateimg(image: nil)
                 self.navigationController?.pushViewController(listview, animated: true)
+                //Reference: https://stackoverflow.com/questions/40484938/remove-view-controller-from-navigation-controller
+                var stack = self.navigationController?.viewControllers
+                stack?.remove(at: 0)
+                self.navigationController?.setViewControllers(stack!, animated: false)
             }
         }
     }
