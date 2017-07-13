@@ -12,9 +12,12 @@ import UIKit
 class SettingViewController:UIViewController {
     
     @IBOutlet var headLabel: UILabel!
+    @IBOutlet var backBtn: UIButton!
     
     override func viewDidLoad() {
         self.headLabel.backgroundColor = UIColor(colorLiteralRed: 0.398, green: 0.797, blue: 1, alpha: BeatmapList.globalAlpha)
+        let image = backBtn.imageView?.image!.image(withTint: UIColor("#0071A9FF"))
+        backBtn.setImage(image, for: .normal)
     }
     
     @IBAction func edgeSwiped(_ sender: Any) {

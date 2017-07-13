@@ -10,6 +10,7 @@
 		388768B76F9054423829D6B2 /* Pods_BeatmapDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B514AEB91F17985E2D640A /* Pods_BeatmapDatabase.framework */; };
 		8A50159D1F121A6000751BA9 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A50159C1F121A6000751BA9 /* SettingViewController.swift */; };
 		8A537D431F0B3B89008EEDF8 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A537D421F0B3B89008EEDF8 /* UIImageExt.swift */; };
+		8A6FDA591F17C73400B504B5 /* SettingsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6FDA581F17C73400B504B5 /* SettingsTableController.swift */; };
 		8A70F7021F0E28B000D2226D /* SlaveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A70F7011F0E28B000D2226D /* SlaveCell.xib */; };
 		8A70F7041F0E2ADA00D2226D /* SlaveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F7031F0E2ADA00D2226D /* SlaveCell.swift */; };
 		8A70F7071F0E5B9800D2226D /* VectorMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70F7061F0E5B9800D2226D /* VectorMath.swift */; };
@@ -64,6 +65,7 @@
 		53C6876BA8FBA18DFCC299EA /* Pods-BeatmapDatabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeatmapDatabase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeatmapDatabase/Pods-BeatmapDatabase.debug.xcconfig"; sourceTree = "<group>"; };
 		8A50159C1F121A6000751BA9 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		8A537D421F0B3B89008EEDF8 /* UIImageExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
+		8A6FDA581F17C73400B504B5 /* SettingsTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableController.swift; sourceTree = "<group>"; };
 		8A70F7011F0E28B000D2226D /* SlaveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlaveCell.xib; sourceTree = "<group>"; };
 		8A70F7031F0E2ADA00D2226D /* SlaveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlaveCell.swift; sourceTree = "<group>"; };
 		8A70F7061F0E5B9800D2226D /* VectorMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorMath.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				8AF096D21F1163BB008027E9 /* TransparentNaviCtrl.swift */,
 				8A50159C1F121A6000751BA9 /* SettingViewController.swift */,
 				8AF886191F1692CE001CF895 /* LoadMapViewController.swift */,
+				8A6FDA581F17C73400B504B5 /* SettingsTableController.swift */,
 			);
 			path = BeatmapDatabase;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				8A70F70C1F0E5C9400D2226D /* LiteHitObject.swift in Sources */,
 				8A70F7041F0E2ADA00D2226D /* SlaveCell.swift in Sources */,
 				8AA1AD181F0A98AA0083CA11 /* DatabaseAccess.swift in Sources */,
+				8A6FDA591F17C73400B504B5 /* SettingsTableController.swift in Sources */,
 				8A70F7131F0E5F9B00D2226D /* TpHitObject.swift in Sources */,
 				8A70F7071F0E5B9800D2226D /* VectorMath.swift in Sources */,
 				8AF096CD1F113DE3008027E9 /* DetailViewController.swift in Sources */,
